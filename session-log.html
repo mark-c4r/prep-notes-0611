@@ -72,7 +72,7 @@
       <h2 id="about-h"><span class="secnum">1</span>What this is</h2>
       <p>The review you came from says AI made it. This page proves it — and shows the working reality, which is messier and more human than "AI made it" sounds. You'll see what Mark actually asked (he spoke or typed casually, typos included), how he corrected course four times, what the AI got wrong, and what everything cost in time and tokens.</p>
       <p><strong>What is redacted, and why:</strong> a few references to Mark's internal tooling, private notes, and one earlier engagement for a different client are marked <span class="redacted">[internal — redacted]</span>. Nothing about <em>this</em> review is hidden. Numbers come from the session transcript and git history, not from memory — including one place where our own internal log had wrong times and the git record corrected it (section 3, marked honestly).</p>
-      <p><strong>This is a living log.</strong> The session it documents was still running when you first read it — including the work of making this very page, and the corrections that came after. New moments are appended at the end of section 3 until the engagement closes; the numbers in section 2 get one final refresh at close.</p>
+      <p><strong>This was a living log; it is now closed.</strong> While the engagement ran, new moments were appended to section 3 — including the work of making this very page and the corrections that came after. The engagement closed late on June 11, 2026. Section 2 holds the final measured numbers, and section 3 ends with the closing moments — including one last measurement correction we would rather show than hide.</p>
     </section>
 
     <section id="numbers" aria-labelledby="numbers-h">
@@ -80,26 +80,26 @@
       <div class="table-wrap">
         <table>
           <tbody>
-            <tr><td>Wall clock, briefing → version 2 live</td><td class="num">12:19 → 20:20 (~8 h)</td></tr>
+            <tr><td>Wall clock, briefing → engagement close</td><td class="num">12:19 → 21:30 (~9 h) <span class="small">+ a short close-out session later the same night (final pass + freeze)</span></td></tr>
             <tr><td>… of which the AI was working</td><td class="num">≈ 4.5–5 h</td></tr>
-            <tr><td>… of which it sat waiting for the human</td><td class="num">≈ 3–3.5 h <span class="small">(Mark was traveling — and the AI shipped version 1 during that window)</span></td></tr>
-            <tr><td>Operator messages (Mark)</td><td class="num">7 <span class="small">+ 2 structured Q&amp;A rounds + 2 plan-approval gates</span></td></tr>
-            <tr><td>Orchestrator replies / tool actions</td><td class="num">337 / 187</td></tr>
+            <tr><td>… of which it sat waiting for the human</td><td class="num">≈ 4–4.5 h <span class="small">(Mark was traveling, reading, or running research errands — and the AI shipped version 1 during the travel window)</span></td></tr>
+            <tr><td>Operator messages (Mark)</td><td class="num">11 <span class="small">(incl. the close-out instruction; + 2 structured Q&amp;A rounds + 2 plan-approval gates)</span></td></tr>
+            <tr><td>Orchestrator replies / tool actions</td><td class="num">440 / 232 <span class="small">(working day, as logged locally — see the scope note below)</span></td></tr>
             <tr><td>Helper AI agents dispatched</td><td class="num">11 <span class="small">(research, audit, planning, stress-tests)</span></td></tr>
-            <tr><td>Cross-model reviews</td><td class="num">3× Codex + 1× Gemini <span class="small">(+ 1 Grok attempt — quota-blocked, skipped honestly)</span></td></tr>
-            <tr><td>AI output produced</td><td class="num">≈ 1.13 M tokens (orchestrator) + ≈ 0.2 M (research agents) + ≈ 77 k (Codex reviews)</td></tr>
-            <tr><td>Context re-read from cache</td><td class="num">≈ 87 M tokens <span class="small">— the hidden cost of one long session: the AI re-reads its whole history constantly</span></td></tr>
-            <tr><td>Site commits / distinct live versions</td><td class="num">6 / 6 <span class="small">(placeholder · scaffold · v1 · v1-reviewed · v2 · v2-reviewed — before this trace page)</span></td></tr>
+            <tr><td>Cross-model reviews</td><td class="num">4× Codex + 1× Gemini <span class="small">(+ 2 manual Grok research rounds; the quick automated Grok lane hit its quota in the morning — skipped honestly)</span></td></tr>
+            <tr><td>AI output produced</td><td class="num">≈ 0.34 M tokens (orchestrator) + ≈ 0.12 M (research agents) + ≈ 77 k (Codex — the first three reviews; the fourth was not measured separately)</td></tr>
+            <tr><td>Context re-read from cache</td><td class="num">≈ 40 M tokens <span class="small">— the hidden cost of one long session: the AI re-reads its whole history constantly</span></td></tr>
+            <tr><td>Site commits / distinct live versions</td><td class="num">11 / 11 <span class="small">(placeholder at minute seven · scaffold · v1 · v1-reviewed · v2 · v2-reviewed · trace ×2 · research folds ×2 · final freeze)</span></td></tr>
             <tr><td>What it cost</td><td class="num">marginal cost ≈ 0 <span class="small">— flat-rate subscriptions; the same volume on pay-per-use API pricing would be roughly tens of dollars <span class="chip chip-inferred">Inferred</span></span></td></tr>
           </tbody>
         </table>
       </div>
-      <p class="small">How measured: timestamps from git history and the session transcript; token counts summed from the transcript's per-message usage records; agent counts from dispatch records. This page itself was added after 20:20 and is not counted.</p>
+      <p class="small">How measured: timestamps from git history and the session transcript; token counts summed from the transcript's per-message usage records; agent counts from dispatch records. Two honest notes from the final refresh. <strong>A correction:</strong> our first measurement read ≈ 1.13 M output tokens and ≈ 87 M cached — it was double-counting repeated records in the transcript; the deduplicated truth is ≈ 0.34 M and ≈ 40 M, published here instead of hidden. Re-checking your own measurement is half of the "judging" skill the review teaches. <strong>A scope note:</strong> the autonomous stretch (13:19–15:43) ran in a cloud session whose own metering we could not retrieve, and the short close-out session that froze these pages cannot fully count itself while it runs — so the reply, tool and token rows slightly undercount the whole engagement. Where a number is uncertain, we show the smaller one — and say so instead of guessing.</p>
     </section>
 
     <section id="replay" aria-labelledby="replay-h">
       <h2 id="replay-h"><span class="secnum">3</span>The session, replayed</h2>
-      <p class="section-intro">The moments that mattered, in order — what was said, what the AI did, what shipped. (This log is alive; moments keep getting appended until the engagement closes.) Steering is the job — the first prompt matters less than the corrections.</p>
+      <p class="section-intro">The moments that mattered, in order — what was said, what the AI did, what shipped. (The engagement is closed; this replay is complete.) Steering is the job — the first prompt matters less than the corrections.</p>
 
       <div class="finding">
         <div class="finding-head"><h3><span class="ts">12:19</span> · The briefing</h3></div>
@@ -133,7 +133,7 @@
 
       <div class="finding">
         <div class="finding-head"><h3><span class="ts">15:54</span> · "I'm back" — and three hours of human time</h3></div>
-        <p>Mark returned, read the live report, met with the client side, and thought. The session idled. This matters for honest accounting: roughly 40% of the 8-hour wall clock was the human reading, deciding, and living life — not the AI working. A solo founder replicating this should budget for <em>their own</em> attention, not just the AI's speed.</p>
+        <p>Mark returned, read the live report, met with the client side, and thought. The session idled. This matters for honest accounting: roughly half of the 9-hour wall clock was the human reading, deciding, and living life — not the AI working. A solo founder replicating this should budget for <em>their own</em> attention, not just the AI's speed.</p>
       </div>
 
       <div class="finding">
@@ -153,33 +153,46 @@
 
       <div class="finding">
         <div class="finding-head"><h3><span class="ts">20:29</span> · "What we're missing is a trace"</h3></div>
-        <p>Mark's steering: make the session itself visible — simplified replay, honest numbers including idle time, and the real prompts behind one deliberate click. Before building it, the AI researched how practitioners publish session logs (the convention: narrative summary first, full material behind an explicit link, annotate the corrections — and we disclose idle vs. active time here, which most session reports don't). Live by 21:15.</p>
+        <p>Mark's steering: make the session itself visible — simplified replay, honest numbers including idle time, and the real prompts behind one deliberate click. Before building it, the AI researched how practitioners publish session logs (the convention: narrative summary first, full material behind an explicit link, annotate the corrections — and we disclose idle vs. active time here, which most session reports don't). Live by 20:40.</p>
       </div>
 
       <div class="finding">
-        <div class="finding-head"><h3><span class="ts">21:25</span> · "We're not done yet" — a lesson in ordering work</h3></div>
+        <div class="finding-head"><h3><span class="ts">20:47</span> · "We're not done yet" — a lesson in ordering work</h3></div>
         <p>Mark caught the AI listing the remaining steps in the wrong order — his read-through was queued <em>before</em> a research task that could still change the report's content, which would have made him read a stale version twice. The correction was bigger than the bug:</p>
         <div class="said"><p class="who">Mark said</p><p>"You need to think about the sequence of our steps as well, the structure of our steps. Take a step back and think: Research → thinking structures in layers → what's needed to be done, why, and when, and why are we actively ordering it […] Then go and start scoping and maybe shaping and planning how to do that, and only then do we start doing, and the very last step is the polishing edits."</p></div>
         <p>The re-ordered close-out: open research first (it can change content) → fold + polish → the human read (once, on the frozen version) → close-out rituals → future reminders last. Steps ordered by <em>what feeds what</em>, not by the order they came to mind. This log was also declared a living document at this moment — appended until the engagement closes, including the making and correcting of the log itself.</p>
       </div>
 
       <div class="finding">
-        <div class="finding-head"><h3><span class="ts">21:40</span> · The crowd reports back (Grok), and the phone test passes</h3></div>
+        <div class="finding-head"><h3><span class="ts">20:55</span> · The crowd reports back (Grok), and the phone test passes</h3></div>
         <p>Mark ran the deep-research prompt manually on grok.com and pasted the dossier in. Useful for honesty: the crowd's conclusion — "not another course, but a progressive practice loop embedded in real business tasks, with persistent context, light accountability, built-in verification" — described section 13 <em>as already written</em>. Two additions made it in after link verification: the Elements of AI Czech course (elementsofai.cz, checked live) and a sixth beginner trap (changing tools too often; practitioners consistently report that 30 days deep on one tool beats novelty). The raw dossier was archived as untrusted data; named endorsements stayed out of the report because we could not confirm them with a second source. Mark also reported his mobile check: clean on Android, except a few milliseconds of font switching on first load — a standard web-font tradeoff we accept rather than over-engineer.</p>
       </div>
       <div class="finding">
-        <div class="finding-head"><h3><span class="ts">22:15</span> · Research round 2, then the stop decision</h3></div>
-        <p>A follow-up research turn pressure-tested the report's four biggest guesses. Three got corroborated: parents really do find tutoring through Czech Facebook offer-and-demand groups; publishing prices is the market norm among visible providers; and the student-to-student positioning has a named, successful Czech precedent (Doučebnice.cz — verified against their own site before it entered the report). One stayed honestly thin (maps-vs-SEO), and two questions came back "no evidence exists yet" — which is an answer too. One claimed price figure failed verification (the source page returned 404), so it stayed out of the report entirely. Then the call: <strong>stop researching</strong>. A third round would chase data the crowd already said doesn't exist; the remaining unknowns are cheaper to answer in the real world — one post in a parents' group, two mystery-shop emails, five customer conversations. Knowing when research stops compounding is part of the method.</p>
+        <div class="finding-head"><h3><span class="ts">21:16</span> · Research round 2, then the stop decision</h3></div>
+        <p>A follow-up research turn pressure-tested the report's four biggest guesses. Three got corroborated: parents really do find tutoring through Czech Facebook offer-and-demand groups; individual tutors who are visible online do publish their rates, which supports the report's advice to give tutoring a public price anchor; and the student-to-student positioning has a named, successful Czech precedent (Doučebnice.cz — verified against their own site before it entered the report). One stayed honestly thin (maps-vs-SEO), and two questions came back "no evidence exists yet" — which is an answer too. One claimed price figure failed verification (the source page returned 404), so it stayed out of the report entirely. Then the call: <strong>stop researching</strong>. A third round would chase data the crowd already said doesn't exist; the remaining unknowns are cheaper to answer in the real world — one post in a parents' group, two mystery-shop emails, five customer conversations. Knowing when research stops compounding is part of the method.</p>
+      </div>
+      <div class="finding">
+        <div class="finding-head"><h3><span class="ts">21:01 &amp; 21:20</span> · The same mistake, twice — caught by process, not intention</h3></div>
+        <p>Twice in twenty minutes, a private process note nearly landed in the public repository: a compound shell command changed its working folder mid-chain, and a later step wrote to the wrong place. Both times the verification habit caught it before anything was pushed — zero exposure. The embarrassing part is the second time: it happened minutes after the AI documented the first incident, and the failing command even contained a written reassurance ("correct folder this time") that the check proved false. Two rules entered the permanent log: <strong>verify state, never assert it</strong> — and use one mechanical fix (absolute paths for any cross-repository write) instead of trusting attention. An AI repeating a mistake it just wrote down is exactly why this whole setup runs on checks, not promises.</p>
+      </div>
+      <div class="finding">
+        <div class="finding-head"><h3><span class="ts">21:26–21:30</span> · The approval, and the session writes its own handover</h3></div>
+        <p>Mark's last message of the day approved all changes and ordered the close-out: re-apply the research learnings across the whole report, update this log with the prompts and their TL;DRs, one last polish, then ship. The session's final act was a handoff note for the next session — live state, the remaining steps in dependency order (content-changing work first, the freeze last, exactly as the 20:47 lesson taught), and the lessons headed for the permanent log. A fresh session starts with zero memory; the handoff note is how the work survives.</p>
+      </div>
+      <div class="finding">
+        <div class="finding-head"><h3><span class="ts">23:07 → close</span> · The close-out session, and one last correction</h3></div>
+        <p>A fresh session read the handoff and ran the close: a consistency pass over the whole report with both research rounds in mind (eight small edits, including two stale counts in the review's own section 12), then this page's prompt appendix and the final numbers above. The final measurement caught two errors worth admitting. The token figures published earlier were overcounted — the corrected, smaller numbers are in section 2, with the method. And the timestamps on the last three moments above were originally written from narrative memory and ran up to an hour fast; git commit times corrected them to what you see now. That is the same lesson this page already taught itself once today (the 15:36 moment): <strong>narrative time drifts; measured time doesn't</strong> — and it happened again the very same evening, caught again by the same method. Then: freeze. What you are reading is the final version.</p>
       </div>
       <p class="toc-return"><a href="#page-top">↑ Back to contents</a></p>
     </section>
 
     <section id="prompts" aria-labelledby="prompts-h">
       <h2 id="prompts-h"><span class="secnum">4</span>The actual prompts</h2>
-      <p class="section-intro">The replicable artifacts, full length. Mark's messages are quoted as typed (casual, imperfect — that's the realism). The agent prompts were written by the orchestrator AI; they are the most reusable part: swap the business details and they work for any small company.</p>
+      <p class="section-intro">The replicable artifacts, full length. Mark's messages are quoted as typed (casual, imperfect — that's the realism). The agent prompts were written by the orchestrator AI; they are the most reusable part: swap the business details and they work for any small company. Each entry opens with a one-line TL;DR ("too long; didn't read" — the short version), so you can skim before you open anything.</p>
 
       <details class="appendix">
         <summary>4.1 · Mark's briefing (12:19) — the prompt that started everything</summary>
+        <p class="small"><strong>TL;DR:</strong> review a friend's exam-prep business honestly, study the competition, propose improvements, document the method, publish as a shareable page by mid-afternoon — in a trusted-mentor tone, no participation trophies.</p>
         <div class="said"><p class="who">Mark said (abridged only where marked)</p>
         <p>"I have a new project-client: a young entrepreneur running a little website in a small town in the Czech Republic. He started this little business of preparing students in his local town for the test exams for the high schools. […] He shared with me a website, and I want to review it, try to understand the business, try to understand the competition, and think about suggestions for improvement. I definitely have suggestions for improvement on the UX and UI side […] give it some consolidated design style guide, and basically elevate the whole interface experience without being super flashy or anything that's not necessary. We also need to be appropriate and truly honestly representing him himself and his business […] What I want from you is to start in some logical, structured fashion. Help me think through how we set up a plan. I think at first we should research some consulting concepts, small business consulting or literally startup consulting concepts […] I'm going to be meeting him in a few hours in the afternoon, and I want to have a little brief. […] We want to be encouraging. Remember, it's a very young entrepreneur starting his business, still a student at high school. We don't want to be just giving participation trophies either. We want to be like a trusted mentor for him […] Alongside, we're also going to document what kind of steps we have taken, what kind of tools we have used, and why. […] Maybe the very best start would be to start with a Q&amp;A session […] to just clarify what we're trying to do and why, and what's in scope and out of scope. […] The output should be a little report that we will upload in HTML form […] deploy it on a Github pages so that we can very easily share it." <span class="redacted">[references to internal tools and an earlier engagement removed]</span></p></div>
         <p class="small">Notice what makes this brief work despite the casual style: who the client is, the honest-mentor tone contract, the deliverable format, the deadline, and permission to structure the approach. Content beats polish.</p>
@@ -187,6 +200,7 @@
 
       <details class="appendix">
         <summary>4.2 · The four scoping questions the AI asked back (12:20)</summary>
+        <p class="small"><strong>TL;DR:</strong> before building anything, the AI asked four questions; the four binding answers — language, where to publish, ambition, deadline — became the contract for the day.</p>
         <ul>
           <li><strong>Language?</strong> → English, simple (B1–B2), Czech terms in brackets — "Ondra and Šimon speak English and need to practice it."</li>
           <li><strong>Publish when/where?</strong> → Public link before the meeting, neutral repo name, search engines told not to index, ~30-day takedown.</li>
@@ -198,6 +212,7 @@
 
       <details class="appendix">
         <summary>4.3 · The "voice card" — pasted into every research agent's instructions</summary>
+        <p class="small"><strong>TL;DR:</strong> five binding lines pasted into every helper agent — simple English, Czech terms in brackets, every claim tagged and receipted, first names only.</p>
         <div class="prompt-block">VOICE CARD (binding): simple English (B1-B2), short sentences. Czech terms in
 brackets with correct diacritics on first use. Tag every claim [Observed]
 (verified today, with URL + time) or [Inferred] (reasoned, say from what).
@@ -208,6 +223,7 @@ First names only (Ondra, Šimon) — never surnames.</div>
 
       <details class="appendix">
         <summary>4.4 · Research agent A1 — the site auditor (dispatched 12:58, full prompt)</summary>
+        <p class="small"><strong>TL;DR:</strong> audit the site under strict evidence rules — define what "confirmed broken" requires <em>before</em> looking, screenshots with privacy hygiene, grouped findings with severity; partial answers allowed, invention not.</p>
         <div class="prompt-block">You are A1, the site-audit probe for a same-day consulting review of
 https://prijimackynostress.cz/ — a Czech website where two 19-year-old students
 (Ondra, Šimon) sell mock entrance-exam sessions (přijímačky nanečisto) and
@@ -255,6 +271,7 @@ email, OG tags, 404 behavior, HTTPS, console errors.
 
       <details class="appendix">
         <summary>4.5 · Research agent A2 — market &amp; prices (full prompt, trimmed)</summary>
+        <p class="small"><strong>TL;DR:</strong> build the competitor price table from the companies' own websites only — "price not public" and "local landscape unmapped" are acceptable answers.</p>
         <div class="prompt-block">You are A2, the competitive+pricing probe … HARD DEADLINE: 35 minutes …
 
 PRICE SOURCE RULE (binding): a price may ONLY be cited from the competitor's
@@ -273,6 +290,7 @@ promotional prices as such.
 
       <details class="appendix">
         <summary>4.6 · Research agent A3 — the ground-up blueprint (full prompt, trimmed)</summary>
+        <p class="small"><strong>TL;DR:</strong> design the from-scratch site architecture — but open with "no rebuild needed now", and simplicity is the graded deliverable.</p>
         <div class="prompt-block">You are A3, the ground-up blueprint designer … Your deliverable: the report's
 centerpiece — "if we designed this site from scratch, what is the simplest,
 most logical architecture" — optimized for SEO/marketing and customer
@@ -293,7 +311,8 @@ each: job-to-be-done | target Czech keyword | one CTA) · 3. MODULES &amp; SEAMS
       </details>
 
       <details class="appendix">
-        <summary>4.7 · The adversarial review charters (Codex ×3, Gemini ×1)</summary>
+        <summary>4.7 · The adversarial review charters (Codex ×4, Gemini ×1)</summary>
+        <p class="small"><strong>TL;DR:</strong> three attack briefs — a feasibility attacker for the plan, a claims attacker for the finished report, a reader advocate for the experience — each ordered to find real problems, not to praise. The same claims charter ran a fourth time on this very page.</p>
         <p><strong>Codex, plan review (12:35):</strong></p>
         <div class="prompt-block">You are an adversarial technical reviewer. Review the plan below for
 implementation feasibility, untested assumptions, security risks, and
@@ -326,22 +345,83 @@ the element, drop the finding.</div>
 
       <details class="appendix">
         <summary>4.8 · The steering corrections, verbatim (the most instructive part)</summary>
+        <p class="small"><strong>TL;DR:</strong> the three corrections that steered the day, word for word — a leftover format killed, the teach-the-method reframe, and a plan rejection with reasons. Reading the output and reacting is the skill.</p>
         <div class="said"><p class="who">13:19 — killing a format</p><p>"let's not do any 'personal letter' style anymore, that was stupid; no weird custom language tweaks or overly bending our thinking just to fit some format expectations" <span class="redacted">[reference to earlier engagement removed]</span></p></div>
         <div class="said"><p class="who">19:06 — the reframe (abridged)</p><p>"'97/100' — it has to say what units, what measure, people ask 'of what' […] You can't just say 'hero' and expect that Ondřej and others understand what hero is […] '12 How this report was made' — we need more meat in this — reveal more of our 'kitchen' — what were the prerequisites? can it be done with cheaper models? […] main advice for Ondra is supposed to be — not the schedule of what to do and when, but how to use AI to speedrun the iterations […] How do we help Ondřej become AI-native? […] I don't want him to get a fish. I want to teach him how to get the fish." <span class="redacted">[tool-preference opinions removed — the published principle is model-agnostic]</span></p></div>
         <div class="said"><p class="who">19:48 — rejecting the v2 plan, with reasons</p><p>"the first part is ok […] just that the practical plan and how-to so far entirely ignores any existence of AI […] tell him how to use AI to self-learn while doing; that's the best curriculum I've seen in practice so far, work on your own business with your own money on the line […] not a prescriptive 'single smart curriculum', that's pretentious […] let's call it 'assisted self-paced progressive learning', showing the ropes"</p></div>
         <p class="small">This is what "steering" means: not better prompts, but reading the output and reacting with judgment. The corrections carried more information than the briefing.</p>
+      </details>
+
+      <details class="appendix">
+        <summary>4.9 · The Grok deep-research prompt, round 1 (run by Mark at grok.com; results pasted back 20:55)</summary>
+        <p class="small"><strong>TL;DR:</strong> ask the crowd what actually works when non-technical young founders learn AI by doing — what sticks, what fails, what people say about one popular teaching skill, and what exists for Czech speakers — with evidence rules attached.</p>
+        <div class="prompt-block">I'm researching how people ACTUALLY teach non-technical young founders (teens/early 20s,
+small real businesses) to work effectively with AI assistants — not prompt-engineering
+courses, but learn-while-doing approaches where their own business is the practice ground.
+
+Please search X posts and linked blogs/threads from the last ~12 months and tell me:
+
+1. What approaches, habits, and micro-programs do practitioners report actually STICK with
+   beginners? (daily reps, context files, verification habits, demo-to-a-friend mechanics,
+   "couch to 5k for AI"-style programs, anything else people swear by)
+2. What do people report does NOT work? (common failure modes when onboarding someone new
+   to AI tools — abandoned subscriptions, prompt hoarding, over-trust, etc.)
+3. What does the X community say about Matt Pocock's /teach skill in the mattpocock/skills
+   repo — real usage reports, what people praise, what they criticize, notable forks/remixes?
+4. Anything specific to the Czech/EU context: Czech-language AI learning resources or
+   communities people recommend for non-developers?
+
+For each theme: representative posts (links), how widespread the view seems, and your
+confidence. Distinguish first-hand experience reports from opinion/hype. I care about
+evidence of what stuck after 30+ days, not launch-day enthusiasm.</div>
+        <p class="small">Worth stealing: numbered themes, "first-hand experience vs. opinion/hype", "how widespread + your confidence", and a 30-day evidence bar — the report's receipts discipline, pointed at a crowd. The automated Grok lane had failed on quota in the morning; this manual run is the "second lane" the review's section 12 talks about. Its conclusion independently matched section 13 as already written — the most reassuring kind of research result.</p>
+      </details>
+
+      <details class="appendix">
+        <summary>4.10 · Round 2 — pressure-testing our own guesses (the follow-up; results pasted back 21:16)</summary>
+        <p class="small"><strong>TL;DR:</strong> turn the report's four biggest labeled guesses into open questions and ask for evidence <em>for or against</em> each — plus chase the two gaps round one admitted. Three came back corroborated, one stayed thin, and one price figure later failed link verification and stayed out of the report.</p>
+        <div class="prompt-block">Follow-up, same thread. Your answer confirmed our learning-design direction and gave us
+two leads we used. Now pressure-test the WEAK SPOTS of the related project: we advised a
+tiny student-run exam-prep business (mock exams for 9th-graders, ~500 CZK/session, small
+Czech town ~9k people, classroom venue at the local school, WordPress site). Several of
+our recommendations rest on educated guesses. Crowdsource evidence FOR or AGAINST each:
+
+1. LOCAL DISCOVERY: How do Czech parents actually find and choose local tutoring/exam
+   prep in small towns? Facebook parent groups? School/teacher recommendations? Maps?
+   First-hand reports from Czech tutors/parents preferred. Any specific channels that
+   work in Středočeský kraj?
+2. PRICE TRANSPARENCY: We claimed "visible prices build trust; hidden prices read as
+   expensive" for this market. What do Czech tutoring/local-service providers report —
+   does publishing prices help or hurt? Any first-hand before/after stories?
+3. MAPS vs SEO: We guessed Google Business Profile + Mapy.cz listings beat classic SEO
+   for "doučování &lt;town&gt;" searches. What do Czech local-service owners report about
+   Mapy.cz specifically vs Google Maps vs organic search?
+4. STUDENT-RUN CREDIBILITY: Businesses run by teenagers selling to parents — which
+   angles do practitioners report working ("we just passed this exam ourselves") vs
+   backfiring (reads amateur)? Real examples, CZ/EU preferred.
+5. RETENTION EVIDENCE (your own medium-confidence gap): any 30+ day follow-up reports
+   on AI-learning habit programs (couchto5k.ai or similar) — completion rates, what
+   finishers say, why people drop out?
+6. CZECH AI COMMUNITIES, harder: beyond prg.ai and Elements of AI — active
+   Czech-language Discord/Facebook/meetup communities where a non-developer business
+   owner can ask practical AI questions? Praha/Brno meetups, student AI clubs?
+
+Same rules: representative links, first-hand vs opinion, how widespread, confidence per
+theme. If a theme is thin, say "thin" — that is itself a useful answer.</div>
+        <p class="small">Worth stealing: asking a research tool to attack your own conclusions finds more than asking it to support them — and "thin is itself a useful answer" gives it permission to come back empty instead of inventing. Every claim it returned still went through link verification before touching the report; one price figure failed exactly there.</p>
       </details>
       <p class="toc-return"><a href="#page-top">↑ Back to contents</a></p>
     </section>
 
     <section id="replicate" aria-labelledby="replicate-h">
       <h2 id="replicate-h"><span class="secnum">5</span>Replicating this</h2>
-      <p>You do not need the multi-agent setup to copy the <em>method</em>. The session above is four moves, and every one works in a plain ~$20 AI chat:</p>
+      <p>You do not need the multi-agent setup to copy the <em>method</em>. The session above is five moves, and every one works in a plain ~$20 AI chat:</p>
       <ol>
         <li><strong>Brief casually, but completely</strong> — who it's for, the tone contract, the deliverable, the deadline (4.1). Then <strong>let the AI ask you questions before it starts</strong> (4.2).</li>
         <li><strong>Write the rules once</strong> — a voice card / business file pasted into every conversation (4.3).</li>
         <li><strong>Demand evidence discipline</strong> — receipts with dates, "not verified" allowed, severity tags (4.4–4.6). Define what "confirmed" means before the AI looks.</li>
         <li><strong>Get a second opinion from a different AI</strong> — paste the finished work into another tool with an attack charter (4.7). Then read it yourself and steer (4.8) — the human corrections were the highest-value tokens of the whole day.</li>
+        <li><strong>Send research to attack, not to confirm</strong> — when a tool can search the live web, hand it your own conclusions and ask for evidence against them (4.9–4.10), then verify anything you keep before it goes public.</li>
       </ol>
       <p>That is the same loop the review's <a href="index.html#diy">section 13</a> teaches — this page is just the loop, caught on camera.</p>
     </section>
