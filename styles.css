@@ -240,13 +240,19 @@ code {
 /* ---------- With-AI recipe lines (roadmap) ---------- */
 
 .withai {
-  margin: 0.45rem 0 0;
+  margin: 0.55rem 0 0;
   font-size: 0.9rem;
   color: var(--ink-soft);
-  border-left: 2px solid var(--accent-wash);
-  padding-left: 0.6rem;
+  border-left: 2px solid var(--accent);
+  background: color-mix(in srgb, var(--accent-wash) 45%, transparent);
+  padding: 0.35rem 0.6rem;
+  border-radius: 0 var(--radius) var(--radius) 0;
 }
 .withai strong { color: var(--accent-ink); font-weight: 650; }
+
+.toc-return { font-size: var(--t-small); margin-top: var(--s-3); }
+.toc-return a { color: var(--ink-faint); text-decoration: none; }
+.toc-return a:hover { color: var(--accent-ink); }
 
 /* ---------- Appendix ---------- */
 
