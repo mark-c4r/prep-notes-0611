@@ -4,13 +4,283 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <title>Prep notes — June 2026</title>
-  <style>
-    body { font-family: Georgia, 'Times New Roman', serif; display: grid; place-items: center; min-height: 90vh; color: #2b2b2b; background: #faf8f5; }
-    p { max-width: 42ch; text-align: center; line-height: 1.6; padding: 0 1rem; }
-  </style>
+  <meta name="description" content="An independent website and business review prepared for the Přijímačky No-Stress team.">
+  <title>Website &amp; Business Review — Přijímačky No-Stress</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <p>This page is being prepared and will be online within the hour. Please check back soon.</p>
+<a class="skip-link" href="#tldr">Skip to the summary</a>
+
+<div class="page">
+
+  <header class="report-header">
+    <p class="eyebrow">Independent review · prepared with care</p>
+    <h1>Website &amp; Business Review<br>Přijímačky No-Stress</h1>
+    <p class="subtitle">An honest look at what is working, what is holding you back, and where to go next — prepared for <strong>Ondra &amp; Šimon</strong>.</p>
+    <div class="meta">
+      <span>June 11, 2026</span>
+      <span>·</span>
+      <span>~20 minute read</span>
+      <span>·</span>
+      <span>Version 1.0</span>
+      <span>·</span>
+      <span>By Mark, with an AI research team</span>
+    </div>
+  </header>
+
+  <div class="toc-wrap">
+    <nav class="toc toc-desktop" aria-label="Contents">
+      <p class="toc-title">Contents</p>
+      <ol>
+        <li><a href="#tldr"><span class="toc-num">1</span>Executive summary</a></li>
+        <li><a href="#about"><span class="toc-num">2</span>What this is (and isn't)</a></li>
+        <li><a href="#working"><span class="toc-num">3</span>What's already working</a></li>
+        <li><a href="#method"><span class="toc-num">4</span>How we structured this</a></li>
+        <li><a href="#findings"><span class="toc-num">5</span>What's holding you back</a></li>
+        <li><a href="#audit"><span class="toc-num">6</span>UX/UI audit</a></li>
+        <li><a href="#styleguide"><span class="toc-num">7</span>A mini style guide</a></li>
+        <li><a href="#hero"><span class="toc-num">8</span>Hero: before &amp; after</a></li>
+        <li><a href="#blueprint"><span class="toc-num">9</span>The ground-up blueprint</a></li>
+        <li><a href="#market"><span class="toc-num">10</span>Market &amp; prices</a></li>
+        <li><a href="#roadmap"><span class="toc-num">11</span>Roadmap</a></li>
+        <li><a href="#showcase"><span class="toc-num">12</span>How this was made</a></li>
+        <li><a href="#caveats"><span class="toc-num">13</span>Caveats</a></li>
+        <li><a href="#appendix"><span class="toc-num">14</span>Appendices</a></li>
+      </ol>
+    </nav>
+    <details class="toc-mobile">
+      <summary>Contents</summary>
+      <nav class="toc" aria-label="Contents (mobile)">
+        <ol>
+          <li><a href="#tldr"><span class="toc-num">1</span>Executive summary</a></li>
+          <li><a href="#about"><span class="toc-num">2</span>What this is (and isn't)</a></li>
+          <li><a href="#working"><span class="toc-num">3</span>What's already working</a></li>
+          <li><a href="#method"><span class="toc-num">4</span>How we structured this</a></li>
+          <li><a href="#findings"><span class="toc-num">5</span>What's holding you back</a></li>
+          <li><a href="#audit"><span class="toc-num">6</span>UX/UI audit</a></li>
+          <li><a href="#styleguide"><span class="toc-num">7</span>A mini style guide</a></li>
+          <li><a href="#hero"><span class="toc-num">8</span>Hero: before &amp; after</a></li>
+          <li><a href="#blueprint"><span class="toc-num">9</span>The ground-up blueprint</a></li>
+          <li><a href="#market"><span class="toc-num">10</span>Market &amp; prices</a></li>
+          <li><a href="#roadmap"><span class="toc-num">11</span>Roadmap</a></li>
+          <li><a href="#showcase"><span class="toc-num">12</span>How this was made</a></li>
+          <li><a href="#caveats"><span class="toc-num">13</span>Caveats</a></li>
+          <li><a href="#appendix"><span class="toc-num">14</span>Appendices</a></li>
+        </ol>
+      </nav>
+    </details>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ 1 EXECUTIVE SUMMARY ============ -->
+    <section id="tldr" aria-labelledby="tldr-h">
+      <h2 id="tldr-h"><span class="secnum">1</span>Executive summary</h2>
+      <!-- SLOT:EXEC-SUMMARY -->
+      <ul>
+        <li><strong>You built a real business at 19.</strong> Real product, real venue, real payments, real customers. That already puts you ahead of most people who only talk about starting something.</li>
+        <li><strong>Your biggest asset is the peer story</strong> — "we passed this exam ourselves" — and the site does not use it nearly enough.</li>
+        <li><strong>The most expensive problems are small:</strong> package prices are not shown, the free test (test zdarma) link path is fragile, and a Gmail address makes paying parents hesitate.</li>
+        <li><strong>You do not need a rebuild.</strong> The quick wins are content and settings inside your current WordPress. The blueprint in section 9 is the target picture for later.</li>
+        <li><strong>Your market position is genuinely good:</strong> the big national players (Scio, online courses) cannot offer a real exam room in Dobříš run by people who just took the exam. Lean into local + personal.</li>
+      </ul>
+      <p>How to read the labels in this report:
+        <span class="chip chip-observed">Observed</span> = we verified it ourselves today (June 11, 2026), with a source.
+        <span class="chip chip-inferred">Inferred</span> = our professional judgment — reasonable, but check it against what you know.
+      </p>
+    </section>
+
+    <!-- ============ 2 ABOUT ============ -->
+    <section id="about" aria-labelledby="about-h">
+      <h2 id="about-h"><span class="secnum">2</span>What this is (and isn't)</h2>
+      <p>This is an outside-in review of <a href="https://prijimackynostress.cz/">prijimackynostress.cz</a> and the business behind it: mock entrance exams (přijímačky nanečisto), tutoring (doučování), and a free sample test (test zdarma) for 9th-graders preparing for the unified entrance exam (jednotná přijímací zkouška).</p>
+      <p>It is <strong>not</strong> a school grade and not a list of demands. It is what a mentor would tell you over coffee, written down with evidence. We looked at your website, your market, and your prices — from the outside, in one afternoon. We did not see your bookings, your finances, or your customers' messages. Where we guess, we say so.</p>
+    </section>
+
+    <!-- ============ 3 WHAT'S WORKING ============ -->
+    <section id="working" aria-labelledby="working-h">
+      <h2 id="working-h"><span class="secnum">3</span>What's already working</h2>
+      <p class="section-intro">Praise here is earned, not polite. Each point names its evidence.</p>
+      <!-- SLOT:WORKING -->
+      <div class="finding">
+        <div class="finding-head"><h3>A real product with real logistics</h3><span class="chip chip-observed">Observed</span></div>
+        <p>Timed mock exams in both subjects (matematika + čeština) in CERMAT format, with answer keys, video breakdowns, and an anonymous comparison against other students — held in a real school building (ZŠ Dobříš) and online with live proctoring. That is a serious product, not a side hustle. <span class="receipt">Source: prijimackynostress.cz, June 11, 2026.</span></p>
+      </div>
+      <div class="finding">
+        <div class="finding-head"><h3>The peer-credibility angle</h3><span class="chip chip-observed">Observed</span></div>
+        <p>"We just took this exam ourselves — and scored 97/100" is something no adult-run course can say. Parents buy trust; students buy someone who speaks their language. You have both in one story.</p>
+      </div>
+      <div class="finding">
+        <div class="finding-head"><h3>Named testimonials</h3><span class="chip chip-observed">Observed</span></div>
+        <p>Your testimonials already include full names and schools. Most small tutoring sites use anonymous quotes — yours are more credible than the average. (Section 5 has one suggestion to make them stronger still.)</p>
+      </div>
+      <div class="finding">
+        <div class="finding-head"><h3>A visible, fair price for the core product</h3><span class="chip chip-observed">Observed</span></div>
+        <p>490 Kč per mock exam session is clearly stated and well positioned for the local market (see section 10). Many competitors hide their numbers; you show yours.</p>
+      </div>
+      <div class="finding">
+        <div class="finding-head"><h3>Four social channels + a free-test funnel</h3><span class="chip chip-observed">Observed</span></div>
+        <p>Instagram, Facebook, TikTok and YouTube, plus a free test as the entry point. The <em>structure</em> of a modern acquisition funnel is already there — section 9 shows how to connect the pieces.</p>
+      </div>
+    </section>
+
+    <!-- ============ 4 METHOD ============ -->
+    <section id="method" aria-labelledby="method-h">
+      <h2 id="method-h"><span class="secnum">4</span>How we structured this review</h2>
+      <!-- SLOT:METHOD -->
+      <p>We used a simple consulting loop that fits a two-person student business: <strong>(1) understand the business as it is</strong> — only verified facts; <strong>(2) audit the website</strong> against established UX heuristics (Nielsen) and SEO basics; <strong>(3) map the market and prices</strong> — only from competitors' own websites; <strong>(4) design the target picture</strong> — the ground-up blueprint, using the "deep modules" idea from software design (few blocks, each doing one big job); <strong>(5) prioritize</strong> everything by effort × impact into Now / Next / Later. Evidence rules were strict: every number needs a source from today, and guesses are labeled as guesses.</p>
+    </section>
+
+    <!-- ============ 5 FINDINGS ============ -->
+    <section id="findings" aria-labelledby="findings-h">
+      <h2 id="findings-h"><span class="secnum">5</span>What's holding you back</h2>
+      <p class="section-intro">Ordered by how much they cost you, not by how hard they are to fix. Most are easier than they look.
+        Tags: <span class="tag tag-fix">Fix first</span> <span class="tag tag-friction">Real friction</span> <span class="tag tag-polish">Polish later</span></p>
+      <!-- SLOT:FINDINGS -->
+    </section>
+
+    <!-- ============ 6 UX/UI AUDIT ============ -->
+    <section id="audit" aria-labelledby="audit-h">
+      <h2 id="audit-h"><span class="secnum">6</span>UX/UI audit</h2>
+      <!-- SLOT:AUDIT -->
+    </section>
+
+    <!-- ============ 7 STYLE GUIDE ============ -->
+    <section id="styleguide" aria-labelledby="styleguide-h">
+      <h2 id="styleguide-h"><span class="secnum">7</span>A mini style guide</h2>
+      <!-- SLOT:STYLEGUIDE -->
+    </section>
+
+    <!-- ============ 8 HERO BEFORE/AFTER ============ -->
+    <section id="hero" aria-labelledby="hero-h">
+      <h2 id="hero-h"><span class="secnum">8</span>Homepage hero: before &amp; after</h2>
+      <!-- SLOT:HERO -->
+    </section>
+
+    <!-- ============ 9 BLUEPRINT ============ -->
+    <section id="blueprint" aria-labelledby="blueprint-h">
+      <h2 id="blueprint-h"><span class="secnum">9</span>The ground-up blueprint</h2>
+      <p class="section-intro"><span class="chip chip-inferred">Inferred</span> — this whole section is design judgment, grounded in what we observed on your site and in your market.</p>
+
+      <div class="callout">
+        <p><strong>No rebuild needed now.</strong> This is the target picture for when you outgrow the current site. Every first move below is a quick win inside your existing WordPress + Elementor. Do not rebuild to act on this.</p>
+      </div>
+
+      <h3>9.1 Five quick wins inside WordPress (this month)</h3>
+      <ol>
+        <li><strong>Show package prices as a simple table</strong> — 1 / 2 / 3 sessions (termíny) with real Kč numbers. A hidden price is a lost booking.</li>
+        <li><strong>Switch to a domain email</strong> (e.g. <code>ahoj@prijimackynostress.cz</code>) — Gmail reads amateur to paying parents. Keep Gmail forwarding behind it.</li>
+        <li><strong>Add a photo and school logo to each testimonial</strong> — with the student's and parent's permission. Names are already there; faces push credibility much further.</li>
+        <li><strong>Install a free SEO plugin</strong> (Rank Math or Yoast) and fill in page titles, descriptions, and LocalBusiness + Course + FAQ structured data (schema.org). Zero design work.</li>
+        <li><strong>Make the free test bullet-proof</strong> — one clear button on the homepage, a stable URL, and a check that the form really delivers the test and saves the email. It is the top of your whole funnel.</li>
+      </ol>
+
+      <h3>9.2 The sitemap: 8 pages, each with one job</h3>
+      <p>The idea: every page catches one kind of visitor intent (a search, a social click, a recommendation) and has exactly one main action.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Page</th><th>Whose job it does</th><th>Target search (CZ)</th><th>Main action</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Domů</strong> (Home)</td><td>Anyone — orient &amp; route</td><td class="num">„přijímačky nanečisto"</td><td>Try the free test</td></tr>
+            <tr><td><strong>Přijímačky nanečisto</strong> (Mock exams)</td><td>Parent decides, student attends</td><td class="num">„přijímačky nanečisto Dobříš"</td><td>Book a date (490 Kč)</td></tr>
+            <tr><td><strong>Termíny &amp; ceny</strong> (Dates &amp; prices)</td><td>Parent — remove price friction</td><td class="num">„přijímačky nanečisto cena"</td><td>Pick a date</td></tr>
+            <tr><td><strong>Test zdarma</strong> (Free test)</td><td>Student tries, parent gives email</td><td class="num">„test na přijímačky zdarma"</td><td>Get the free test</td></tr>
+            <tr><td><strong>Doučování</strong> (Tutoring)</td><td>Parent — higher-value upsell</td><td class="num">„doučování na přijímačky"</td><td>Arrange tutoring</td></tr>
+            <tr><td><strong>Výsledky &amp; recenze</strong> (Results &amp; reviews)</td><td>Parent — proof it works</td><td class="num">„kurz na přijímačky recenze"</td><td>Start with the free test</td></tr>
+            <tr><td><strong>Jak to funguje / O nás</strong> (About)</td><td>Parent — trust two 19-year-olds</td><td class="num">„příprava na přijímačky 9. třída"</td><td>Write to us</td></tr>
+            <tr><td><strong>Blog / Rady</strong> (Advice)</td><td>Parent + student — search, all year</td><td class="num">„jak se připravit na přijímačky"</td><td>Free test</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small">A ninth page — entrance exams for 8-year gymnasiums (víceletá gymnázia, 5th grade) — joins the map when that product is ready. Don't build the page before the product.</p>
+
+      <h3>9.3 Modules and seams: build from a few deep blocks</h3>
+      <p>From software design (John Ousterhout): build from <em>a few blocks that each do one big job behind a simple face</em>. You drop a block into a page and fill in a short form — you never rebuild the logic. This applies to your content too: one testimonial format reused everywhere beats ten hand-made quotes.</p>
+      <ul>
+        <li><strong>HeroBlock</strong> — headline + subline + one button. Reused at the top of every page.</li>
+        <li><strong>PriceTable</strong> — session + package prices from <em>one source</em>. Edit once, updates on Home, Mock exams, and Dates &amp; prices.</li>
+        <li><strong>TrustStrip</strong> — thin row under the hero: schools, student count, rating.</li>
+        <li><strong>TestimonialCard</strong> — quote + full name + school + photo + permission flag. The single shape behind Reviews and the homepage.</li>
+        <li><strong>LeadMagnetForm</strong> — email in → free test out, saved to your list. One funnel entry, used on Home + Test zdarma.</li>
+        <li><strong>ExamCountdown</strong> — days until applications (přihlášky, ~February) and exams (~April). Quiet urgency, reused site-wide.</li>
+        <li><strong>FAQBlock</strong> — collapsible questions; also feeds FAQ structured data for Google.</li>
+      </ul>
+
+      <h3>9.4 The acquisition funnel</h3>
+      <p>The funnel is the sitemap walked top to bottom:</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Stage</th><th>Where it lives</th><th>What to count (monthly)</th></tr></thead>
+          <tbody>
+            <tr><td>1 · Free test (test zdarma)</td><td>Test zdarma page + form</td><td class="num">form submits</td></tr>
+            <tr><td>2 · Email list</td><td>your email tool</td><td class="num">open rate</td></tr>
+            <tr><td>3 · Mock exam booking</td><td>Mock exams + Dates &amp; prices</td><td class="num">orders (WooCommerce)</td></tr>
+            <tr><td>4 · Results email + weak spots</td><td>email after each session</td><td class="num">replies</td></tr>
+            <tr><td>5 · Tutoring (doučování)</td><td>Tutoring page</td><td class="num">requests</td></tr>
+            <tr><td>6 · Next year: 5th-grade track</td><td>future page</td><td class="num">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>The seasonal clock matters more than any tactic:</strong> demand climbs from autumn to April. Applications (přihlášky) are due around February; exams run in April. So: push the free test and blog content September–November to build the email list early, sell mock exams hardest December–March, and pivot to last-minute tutoring March–April. Summer is for building content and the 5th-grade track.</p>
+
+      <h3>9.5 Platform: stay on WordPress (for now)</h3>
+      <p>You already run WordPress + Elementor + WooCommerce: booking and card payment for a 490 Kč session work <em>today</em>, and you can edit pages yourselves between your own exams. Your real problems — package price visibility, trust signals, Gmail, missing structured data, a fragile free-test path — are content and settings fixes. Switching platforms would not fix a single one of them.</p>
+      <p>A static or managed site (Framer, Webflow, plain HTML) would buy you speed, fewer moving parts, and near-zero maintenance — but it costs a full rebuild during your own exam year, and you would have to re-solve booking and payments, which WooCommerce already handles. <strong>Recommendation: stay on WordPress now.</strong> Spend the saved effort on the five quick wins and one blog post a month. Revisit only if WordPress upkeep starts eating real time.</p>
+
+      <h3>9.6 Three hero headline directions (drafts to discuss)</h3>
+      <ol>
+        <li><strong>Peer-proof:</strong> „Složili jsme přijímačky sami. Teď pomůžeme i tobě." <span class="small">(We passed the entrance exams ourselves. Now we'll help you too.)</span> — turns "two 19-year-olds" from a doubt into the reason to trust you.</li>
+        <li><strong>Outcome:</strong> „Dostaň se na střední, kterou si vybereš." <span class="small">(Get into the high school you choose.)</span> — names the real goal the parent is paying for.</li>
+        <li><strong>Brand promise:</strong> „Přijímačky nanečisto — bez stresu, s jistotou." <span class="small">(Mock entrance exams — no stress, with confidence.)</span> — pays off your name and reframes the scariest moment of 9th grade.</li>
+      </ol>
+    </section>
+
+    <!-- ============ 10 MARKET ============ -->
+    <section id="market" aria-labelledby="market-h">
+      <h2 id="market-h"><span class="secnum">10</span>Market &amp; prices</h2>
+      <!-- SLOT:MARKET -->
+    </section>
+
+    <!-- ============ 11 ROADMAP ============ -->
+    <section id="roadmap" aria-labelledby="roadmap-h">
+      <h2 id="roadmap-h"><span class="secnum">11</span>Roadmap: Now / Next / Later</h2>
+      <!-- SLOT:ROADMAP -->
+    </section>
+
+    <!-- ============ 12 SHOWCASE ============ -->
+    <section id="showcase" aria-labelledby="showcase-h">
+      <h2 id="showcase-h"><span class="secnum">12</span>How this report was made</h2>
+      <!-- SLOT:SHOWCASE -->
+    </section>
+
+    <!-- ============ 13 CAVEATS ============ -->
+    <section id="caveats" aria-labelledby="caveats-h">
+      <h2 id="caveats-h"><span class="secnum">13</span>Caveats — read this before acting</h2>
+      <ul>
+        <li><strong>Outside-in, one afternoon.</strong> We never saw your bookings, revenue, email list, or customer messages. Numbers from your perspective may change some recommendations.</li>
+        <li><strong>We did not talk to your customers.</strong> Before bigger moves, ask five parents why they bought. Their words beat our guesses.</li>
+        <li><strong>Prices were checked today</strong> (June 11, 2026) and can change. Each price in section 10 carries its source.</li>
+        <li><strong>AI-assisted, human-reviewed.</strong> Section 12 explains exactly which tools did what, and what their limits are.</li>
+        <li><strong>This link is public-but-unlisted.</strong> Search engines are asked not to index it, but anyone with the link can read it. We plan to take it down within ~30 days — save what you need.</li>
+      </ul>
+    </section>
+
+    <!-- ============ 14 APPENDICES ============ -->
+    <section id="appendix" aria-labelledby="appendix-h">
+      <h2 id="appendix-h"><span class="secnum">14</span>Appendices</h2>
+      <!-- SLOT:APPENDIX -->
+    </section>
+
+  </main>
+
+  <footer class="report-footer">
+    <p>Prepared by Mark with an AI research team (Claude Code, Codex — details in section 12), June 11, 2026. Written for Ondra &amp; Šimon. Honest by design: praise is earned, criticism comes with evidence, and guesses are labeled.</p>
+    <p class="small">This page sets <code>noindex, nofollow</code> and will be taken down around mid-July 2026.</p>
+  </footer>
+
+</div>
 </body>
 </html>
