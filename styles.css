@@ -237,6 +237,17 @@ code {
 .stage-pill.later { background: var(--ink-faint); }
 .effort { font-size: var(--t-small); color: var(--ink-faint); font-variant-numeric: tabular-nums; white-space: nowrap; }
 
+/* ---------- With-AI recipe lines (roadmap) ---------- */
+
+.withai {
+  margin: 0.45rem 0 0;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  border-left: 2px solid var(--accent-wash);
+  padding-left: 0.6rem;
+}
+.withai strong { color: var(--accent-ink); font-weight: 650; }
+
 /* ---------- Appendix ---------- */
 
 details.appendix {
