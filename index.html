@@ -83,8 +83,8 @@
       <ul>
         <li><strong>You built a real business at 19.</strong> Real product, real venue, real payments, real customers. That already puts you ahead of most people who only talk about starting something.</li>
         <li><strong>Your biggest asset is the peer story</strong> — "we passed this exam ourselves" — and the site does not use it nearly enough.</li>
-        <li><strong>The most expensive problems are small:</strong> package prices are not shown, the free test (test zdarma) link path is fragile, and a Gmail address makes paying parents hesitate.</li>
-        <li><strong>You do not need a rebuild.</strong> The quick wins are content and settings inside your current WordPress. The blueprint in section 9 is the target picture for later.</li>
+        <li><strong>The one urgent thing: the site is frozen in last season.</strong> The free-test page thanks November and offers signup for March; the homepage leads with an expired April notice stamped with today's date. Parents researching <em>next</em> year — right now, in June — read this as "they've wound down."</li>
+        <li><strong>You do not need a rebuild.</strong> The expensive problems are small: a season reset, share previews, a price table, a font fix, a typo, a domain email. Quick wins inside your current WordPress; the blueprint in section 9 is the target picture for later.</li>
         <li><strong>Your market position is genuinely good:</strong> the big national players (Scio, online courses) cannot offer a real exam room in Dobříš run by people who just took the exam. Lean into local + personal.</li>
       </ul>
       <p>How to read the labels in this report:
@@ -139,25 +139,194 @@
       <h2 id="findings-h"><span class="secnum">5</span>What's holding you back</h2>
       <p class="section-intro">Ordered by how much they cost you, not by how hard they are to fix. Most are easier than they look.
         Tags: <span class="tag tag-fix">Fix first</span> <span class="tag tag-friction">Real friction</span> <span class="tag tag-polish">Polish later</span></p>
-      <!-- SLOT:FINDINGS -->
+
+      <div class="finding">
+        <div class="finding-head"><h3>The site is frozen in last season</h3><span class="tag tag-fix">Fix first</span><span class="chip chip-observed">Observed</span></div>
+        <p>This is the big one, and it's sneaky because every page technically works. Today (June 11): the free test page thanks participants from <em>November</em> and its main button invites signup for <em>March 21 — three months ago</em>. The homepage opens with an "important notice" about an <em>April</em> session change — auto-stamped "Aktuální k 11. 06. 2026", so stale news wears today's date. The booking page lists mostly past dates. A parent of a <em>next-year</em> 9th-grader — researching right now, in June, for autumn — concludes you've wound down.</p>
+        <p><strong>The fix:</strong> a season-rollover ritual (one checklist, twice a year), auto-hiding past dates, and an <em>evergreen</em> free test — delivered by email instead of tied to an event — so the funnel works year-round. Section 9 builds on exactly this. <span class="receipt">Screenshots in section 6; /testzdarma/ and homepage, June 11, 2026.</span></p>
+      </div>
+
+      <div class="finding">
+        <div class="finding-head"><h3>Shared links show nothing</h3><span class="tag tag-fix">Fix first</span><span class="chip chip-observed">Observed</span></div>
+        <p>Your pages have no social preview tags (Open Graph) and no meta descriptions. When a parent shares your link in a class WhatsApp group or on Facebook — your single most important growth channel — it appears as a bare URL: no image, no title, no text. Every share works at a fraction of its potential, and you cannot see it happening.</p>
+        <p><strong>The fix:</strong> a free SEO plugin (Rank Math / Yoast) + one preview image + a one-sentence description per page. About an hour of work. <span class="receipt">Checked: no <code>og:</code> tags, no meta description on any page, June 11, 2026.</span></p>
+      </div>
+
+      <div class="finding">
+        <div class="finding-head"><h3>Your font silently fails to load</h3><span class="tag tag-fix">Fix first</span><span class="chip chip-observed">Observed</span></div>
+        <p>The site requests its main font (Roboto) over insecure HTTP from inside an HTTPS page. Browsers block this — we counted 10+ blocked requests on the homepage. Cautious browsers (often exactly the ones careful parents use) show a fallback font instead of your design.</p>
+        <p><strong>The fix:</strong> regenerate the Elementor local fonts cache so URLs use HTTPS — a settings toggle, minutes. <span class="receipt">Browser console: "Mixed Content … blocked" ×10, June 11, 2026.</span></p>
+      </div>
+
+      <div class="finding">
+        <div class="finding-head"><h3>You are flying blind</h3><span class="tag tag-fix">Fix first</span><span class="chip chip-observed">Observed</span></div>
+        <p>There is no analytics on the site — no Google Analytics, no Search Console connection we could detect, nothing. You cannot answer the most basic business question: <em>where do bookings come from?</em> Instagram? The school corridor? Google? Every marketing hour you spend is unmeasured.</p>
+        <p><strong>The fix:</strong> install GA4 (or a simpler privacy-friendly tool) + connect Search Console. One evening; then ignore it except once a month. <span class="receipt">Checked: no gtag/GTM/analytics scripts in page source, June 11, 2026.</span></p>
+      </div>
+
+      <div class="finding">
+        <div class="finding-head"><h3>Google can't show your best content</h3><span class="tag tag-fix">Fix first</span><span class="chip chip-observed">Observed</span></div>
+        <p>No structured data (schema.org) anywhere — yet you have everything it rewards: a local business with an address, dated exam sessions, a 490 Kč product, and FAQ sections. With markup, Google can show your dates, price, and FAQ directly in search results; without it, you're a plain blue link next to Scio.</p>
+        <p><strong>The fix:</strong> the same SEO plugin from finding 1 does LocalBusiness + FAQ markup with configuration, not code. <span class="receipt">Checked: zero <code>ld+json</code> blocks site-wide, June 11, 2026.</span></p>
+      </div>
+
+      <div class="finding">
+        <div class="finding-head"><h3>A typo in your main product headline</h3><span class="tag tag-friction">Real friction</span><span class="chip chip-observed">Observed</span></div>
+        <p>The big headline on your core product page reads „PŘÍJÍMAČKY NANEČISTO" — it should be „PŘIJÍMAČKY". A spelling mistake in the one word your business is named after, on the page where parents decide — for a company that teaches Czech, this one matters double. (Related: the homepage browser title is 127 characters; Google cuts it at ~60.)</p>
+        <p><strong>The fix:</strong> two minutes in Elementor. <span class="receipt">H1 on /prijimackynanecisto/, June 11, 2026.</span></p>
+      </div>
+
+      <div class="finding">
+        <div class="finding-head"><h3>Package prices are hidden; tutoring has no anchor</h3><span class="tag tag-friction">Real friction</span><span class="chip chip-observed">Observed</span></div>
+        <p>Single session: clear, 490 Kč. But multi-session packages say only "discount" with no numbers, and tutoring (doučování) says "price is always individual." A comparing parent gets no anchor for your higher-value services at exactly the moment they're choosing. Hidden prices read as "expensive" — even when yours aren't.</p>
+        <p><strong>The fix:</strong> a simple price table (1 / 3 / 6 / 9 sessions) and "doučování od X Kč / 60 min." <span class="receipt">/doucovani/: "Cena je vždy individuální…", June 11, 2026.</span></p>
+      </div>
+
+      <div class="finding">
+        <div class="finding-head"><h3>Two different buying experiences</h3><span class="tag tag-friction">Real friction</span><span class="chip chip-observed">Observed</span></div>
+        <p>A single session is bought through a proper checkout (WooCommerce). But packages — your <em>bigger</em> sale — go through a Google Form: no confirmation, no payment step, manual follow-up. The more a parent wants to spend, the more improvised the purchase feels.</p>
+        <p><strong>The fix:</strong> make packages normal WooCommerce products with visible prices. <span class="receipt">/vyber-terminu-prezencne/: forms.gle links for bundles, June 11, 2026.</span></p>
+      </div>
+
+      <div class="finding">
+        <div class="finding-head"><h3>The legal layer needs one honest afternoon</h3><span class="tag tag-friction">Real friction</span><span class="chip chip-observed">Observed</span></div>
+        <p>Three related gaps: <strong>(a)</strong> no business ID (IČO) anywhere on the site — Czech consumer rules require it for anyone selling online; <strong>(b)</strong> no cookie consent mechanism, even though the shop processes personal data; <strong>(c)</strong> testimonials show <em>full names of students</em> who are very likely minors — under GDPR that needs explicit parental consent you can show. None of this is dramatic, and all of it is normal early-stage mess — but a careful parent (or a competitor having a bad day) could make it expensive.</p>
+        <p><strong>The fix:</strong> add IČO to the footer + contact page (if registration isn't sorted yet, this is the nudge — it's quick and cheap); install a consent plugin; switch testimonials to "Václav S." format or collect written parental consent for names and photos. <span class="receipt">/kontakty/ has no IČO; no consent plugin detected; full names on homepage — June 11, 2026.</span></p>
+      </div>
+
+      <div class="finding">
+        <div class="finding-head"><h3>Gmail at the front door</h3><span class="tag tag-friction">Real friction</span><span class="chip chip-observed">Observed</span></div>
+        <p><code>prijimackynostress@gmail.com</code> is the only contact address. You own the domain — an address like <code>ahoj@prijimackynostress.cz</code> costs little, forwards to the same Gmail inbox, and removes a quiet "is this a real company?" doubt for paying parents.</p>
+        <p><span class="receipt">Contact address on /kontakty/ and homepage, June 11, 2026.</span></p>
+      </div>
+
+      <div class="finding">
+        <div class="finding-head"><h3>The site is heavy and slow to start</h3><span class="tag tag-polish">Polish later</span><span class="chip chip-observed">Observed</span></div>
+        <p>First byte took ~3.5 seconds and the homepage HTML alone is 223 KB with 30+ scripts (WordPress + Elementor + WooCommerce stacking up). Cache is active, but mobile users on school Wi-Fi will feel it. Real, but fix it after the items above — and the free-test page (test zdarma) deserves uptime monitoring, since our very first automated check of it failed while later checks passed (details in the appendix).</p>
+        <p><strong>The fix (later):</strong> image compression, plugin diet, and a free uptime monitor pinging the free-test page. <span class="receipt">curl timing: TTFB 3.48 s, 223 297 bytes, June 11, 2026.</span></p>
+      </div>
     </section>
 
     <!-- ============ 6 UX/UI AUDIT ============ -->
     <section id="audit" aria-labelledby="audit-h">
       <h2 id="audit-h"><span class="secnum">6</span>UX/UI audit</h2>
-      <!-- SLOT:AUDIT -->
+      <p class="section-intro">How we audited: an automated browser captured your pages at desktop and mobile sizes; an accessibility engine (axe-core) scanned the homepage; and we ran a 20-point design checklist plus a usability walkthrough in the style of Steve Krug's "Don't Make Me Think."</p>
+
+      <p><strong>First, credit:</strong> the accessibility scan found <strong>zero critical violations</strong> (just two minor warnings — heading order and duplicate landmarks). Many professional sites fail this. <span class="receipt">axe-core via headless Chrome, June 11, 2026.</span></p>
+
+      <p><strong>The 20-point design checklist flagged 9 of 20 points</strong> — mid-range. One honest caveat: this is a heuristic checklist, not a law of nature. It can't see your customers, and it scores conventions, not taste. We use it to find discussion points, not to grade you.</p>
+      <ul>
+        <li><strong>What passed:</strong> spacing and alignment are consistent, content widths are readable, the layout adapts properly to mobile, your section cards have character, no tacky gradient buttons.</li>
+        <li><strong>What the checklist flagged, in order of impact:</strong> no clear call-to-action above the fold; the hero is a stock-photo-with-slogan pattern that says <em>mood</em> but not <em>offer</em>; body text is Roboto (the default font of the internet — your display serif has personality, your body text doesn't); call-to-action colors change from section to section (orange, black, blue, green); icons mix emoji with line icons.</li>
+      </ul>
+
+      <h3>What a first-time parent actually sees</h3>
+
+      <figure>
+        <img src="assets/before-home-desktop.png" alt="Homepage above the fold on desktop: a large serif headline 'LETOS BEZ STRESU!' over a blurred photo of crumpled paper, with the navigation above. No button or call to action is visible." width="1200" height="750">
+        <figcaption>Desktop homepage, above the fold. Identity: yes. Offer and action: not yet. <span class="stamp">Captured June 11, 2026.</span></figcaption>
+      </figure>
+
+      <figure class="figure-pair">
+        <div>
+          <img src="assets/before-home-mobile.png" alt="Mobile homepage above the fold: a red chip reading 'DŮLEŽITÉ UPOZORNĚNÍ', the note 'Aktuální k 11. 06. 2026', and a heading 'Změna termínu a speciální bonus' about an April session change." width="640" height="1385">
+          <figcaption>Mobile homepage: the first screen is an <em>expired April notice</em> wearing today's date stamp. <span class="stamp">Captured June 11, 2026.</span></figcaption>
+        </div>
+        <div>
+          <img src="assets/testzdarma-evidence.png" alt="The free test page: hero reading TEST ZDARMA, followed by a box saying the in-person free test took place on November 22, and a blue button inviting signup for March 21, 2026." width="1200" height="745">
+          <figcaption>The free-test page (test zdarma) in June: thanks for <em>November</em>, signup button for <em>March 21</em> — both in the past. <span class="stamp">Captured June 11, 2026.</span></figcaption>
+        </div>
+      </figure>
+
+      <figure class="figure-pair">
+        <div>
+          <img src="assets/typo-evidence.png" alt="Product page hero with the large headline PŘÍJÍMAČKY NANEČISTO — with the typo Í instead of I in PŘIJÍMAČKY — over a classroom photo." width="1200" height="633">
+          <figcaption>The main product page H1: „PŘ<strong>Í</strong>JÍMAČKY" — the long Í is the typo. <span class="stamp">Captured June 11, 2026.</span></figcaption>
+        </div>
+        <div>
+          <img src="assets/stale-dates-evidence.png" alt="A section titled 'Nejbližší termíny přijímaček nanečisto' showing three date cards — 21.03.2026, 22.03.2026 and 02.02.2026 — each with an active 'Rezervovat místo' button." width="1200" height="633">
+          <figcaption>"Nearest dates" in June 2026: February and March, all past, all still bookable-looking. <span class="stamp">Captured June 11, 2026.</span></figcaption>
+        </div>
+      </figure>
+
+      <h3>Five usability observations (Krug walkthrough)</h3>
+      <ol>
+        <li><strong>The homepage knows who you are, but not what it wants from the visitor.</strong> Looking at the first screen: logo, menu, "LETOS BEZ STRESU!" — and then an operations notice. My eye searches for "what do I do here?" and finds nothing until I scroll. Every landing visit starts with admin noise instead of the offer. <em>Change: hero = one sentence of offer + one button (the free test). Announcements move to a thin banner.</em></li>
+        <li><strong>The three-second test fails on the slogan.</strong> "This year without stress!" sets a mood but a rushed parent can't tell in three seconds: exam prep, 9th grade, Dobříš, from 490 Kč. The information exists — lower on the page. <em>Change: subheadline that says who/what/where in plain words (section 9.6 has three drafts).</em></li>
+        <li><strong>The highest-intent moment splits into two doors.</strong> Booking a single session opens a proper checkout; booking a package opens a Google Form. The buyer with the most money to spend gets the most improvised path — a classic "wait, which one?" moment at exactly the wrong time.</li>
+        <li><strong>Stale dates drain trust silently.</strong> Past sessions presented as "nearest dates" + an expired notice stamped with today's date = the site looks abandoned even though the business isn't. For a service parents trust with their kid's future, "is this still running?" is the most expensive doubt possible.</li>
+        <li><strong>The footer is missing its handshake.</strong> Where a careful parent looks last before paying — the footer — there's a Gmail address and no business ID (IČO). Both fixable in an afternoon; both quiet credibility leaks today.</li>
+      </ol>
     </section>
 
     <!-- ============ 7 STYLE GUIDE ============ -->
     <section id="styleguide" aria-labelledby="styleguide-h">
       <h2 id="styleguide-h"><span class="secnum">7</span>A mini style guide</h2>
-      <!-- SLOT:STYLEGUIDE -->
+      <p class="section-intro"><span class="chip chip-inferred">Inferred</span> — a proposal, not a law. The goal: keep your warm, student-friendly personality, but make it <em>consistent</em>. Everything below can be set once in Elementor's Global Colors &amp; Fonts and then just… holds.</p>
+
+      <h3>The one rule that matters most</h3>
+      <p><strong>One action color.</strong> Today your buttons and links switch between orange, black, blue and green. Pick one — we suggest the orange you already use — and let it mean exactly one thing everywhere: "this is what you click next." When everything is special, nothing is.</p>
+
+      <h3>Colors</h3>
+      <ul class="swatches">
+        <li class="swatch"><div class="well" style="background:#FDFBF7"></div><strong>Cream</strong><br><code>#FDFBF7</code><br>page background</li>
+        <li class="swatch"><div class="well" style="background:#232A33"></div><strong>Ink</strong><br><code>#232A33</code><br>text (never pure black)</li>
+        <li class="swatch"><div class="well" style="background:#5B6570"></div><strong>Soft ink</strong><br><code>#5B6570</code><br>secondary text</li>
+        <li class="swatch"><div class="well" style="background:#E8740C"></div><strong>Orange</strong><br><code>#E8740C</code><br>the action color</li>
+        <li class="swatch"><div class="well" style="background:#C45F05"></div><strong>Deep orange</strong><br><code>#C45F05</code><br>hover / pressed</li>
+        <li class="swatch"><div class="well" style="background:#EAF2F6"></div><strong>Sky</strong><br><code>#EAF2F6</code><br>one calm support tint</li>
+        <li class="swatch"><div class="well" style="background:#E7E0D2"></div><strong>Line</strong><br><code>#E7E0D2</code><br>borders &amp; dividers</li>
+      </ul>
+      <p>That means retiring the per-section pastel rainbow (peach / blue / green / purple cards). Two background moods — cream and sky — create calm; four create noise. Calm is literally your brand name.</p>
+
+      <h3>Type</h3>
+      <ul>
+        <li><strong>Headlines: Lora</strong> (600/700) — a warm serif with full Czech diacritics, free on Google Fonts. Keeps the bookish personality your current serif headlines already have.</li>
+        <li><strong>Body: Source Sans 3</strong> (400/600) — replaces Roboto (the internet's default font, and currently failing to load anyway — finding 3). Friendly, very readable at 17–18px.</li>
+        <li>Rules of thumb: two families total, max four weights, headlines tight (line-height ≈ 1.15), body relaxed (≈ 1.6), body text never below 16px.</li>
+      </ul>
+
+      <h3>Spacing &amp; components</h3>
+      <ul>
+        <li><strong>Spacing scale:</strong> multiples of 8 px (8 / 16 / 24 / 32 / 48 / 64). Related things sit close (8–16); sections breathe (64–96). Set Elementor section padding once and reuse.</li>
+        <li><strong>Buttons:</strong> exactly two kinds. Primary = filled orange, rounded 10 px, bold. Secondary = plain ink text with an arrow ("Termíny a ceny →"). Delete every other button style.</li>
+        <li><strong>Cards:</strong> white, thin <code>#E7E0D2</code> border, 14 px radius, one soft shadow. Never a card inside a card.</li>
+        <li><strong>Voice:</strong> keep the friendly „ty" for students — it's your peer brand. Just keep it consistent (the site currently mixes registers between pages).</li>
+      </ul>
+      <p class="small">The hero mockup below uses exactly these tokens — it's the style guide, rendered.</p>
     </section>
 
     <!-- ============ 8 HERO BEFORE/AFTER ============ -->
     <section id="hero" aria-labelledby="hero-h">
       <h2 id="hero-h"><span class="secnum">8</span>Homepage hero: before &amp; after</h2>
-      <!-- SLOT:HERO -->
+      <p class="section-intro">One screen, redesigned for the question every visitor brings: <em>"Is this for my kid, and what do I do next?"</em></p>
+
+      <div class="figure-pair">
+        <figure>
+          <img src="assets/before-home-desktop.png" alt="Before: the current homepage hero — a serif slogan over a blurred photo, no visible button." width="1200" height="750">
+          <figcaption><strong>Before</strong> — mood without an offer; the first button is below the fold. <span class="stamp">Captured June 11, 2026.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="assets/after-hero-mockup.png" alt="After: proposed hero — headline 'Složili jsme přijímačky sami. Teď pomůžeme i tobě.', subline describing mock exams in Dobříš and online, an orange button 'Vyzkoušej test zdarma', a trust row with 97/100, ZŠ Dobříš and 490 Kč, and a 'Jak to funguje' side card." width="1200" height="683">
+          <figcaption><strong>After</strong> — a working proposal, built with the section-7 tokens. <a href="mockups/hero.html">Open it live, full-screen →</a></figcaption>
+        </figure>
+      </div>
+
+      <h3>The four moves, and why</h3>
+      <ol>
+        <li><strong>The headline says the one thing only you can say.</strong> „Složili jsme přijímačky sami. Teď pomůžeme i tobě." — your unfair advantage, in the first second. „Letos bez stresu!" becomes the supporting promise, not the whole message.</li>
+        <li><strong>One orange button: the free test.</strong> The single lowest-risk next step for a new visitor, top right in the nav and front-center in the hero. Everything else is a quiet text link.</li>
+        <li><strong>The trust row answers the three parent doubts in one line:</strong> does it work (97/100), is it real (a real classroom at ZŠ Dobříš), what does it cost (from 490 Kč). No scrolling required.</li>
+        <li><strong>The season chip replaces stale announcements.</strong> „Přihlášky v únoru · přijímačky v dubnu" is true all year and quietly says <em>we know the calendar that rules your family's next 10 months</em>. Operational notices move to a thin banner only when actually current.</li>
+      </ol>
+      <p>Try the <a href="mockups/hero.html">live version</a> on your phone — it's built mobile-first, because that's where parents will see it (today's mobile homepage opens with an expired notice instead; see section 6).</p>
+
+      <div class="hero-embed">
+        <figure>
+          <iframe src="mockups/hero.html" title="Live hero mockup proposal (Czech)" loading="lazy"></iframe>
+          <figcaption>The proposal, embedded live. Czech copy is a draft to refine together — the structure is the point.</figcaption>
+        </figure>
+      </div>
     </section>
 
     <!-- ============ 9 BLUEPRINT ============ -->
@@ -241,19 +410,205 @@
     <!-- ============ 10 MARKET ============ -->
     <section id="market" aria-labelledby="market-h">
       <h2 id="market-h"><span class="secnum">10</span>Market &amp; prices</h2>
-      <!-- SLOT:MARKET -->
+      <p class="section-intro">Strict rule for this section: a price is only listed if we found it <strong>on the competitor's own website today</strong> (June 11, 2026). "Price not public" means exactly that — and it happens a lot, which is interesting in itself.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Who</th><th>What they sell</th><th class="num">Price (CZK)</th><th>Grades</th><th>What to learn — or ignore</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>to-das.cz</strong></td>
+              <td>Weekend mock exams (21/season) + app + parent webinars</td>
+              <td class="num">14 500 / season<br><span class="small">≈ 690 / session</span></td>
+              <td>5. 7. 9.</td>
+              <td><strong>Learn:</strong> their ~690 Kč per session makes your 490 Kč a real bargain — say it out loud. <strong>Ignore:</strong> the app and webinars; wrong scale for two people.</td>
+            </tr>
+            <tr>
+              <td><strong>Scio.cz</strong></td>
+              <td>National brand: courses, tests, mock exams</td>
+              <td class="num">not public*</td>
+              <td>5. 7. 9.</td>
+              <td><strong>Learn:</strong> parents search "Scio" by name — brand trust took years. <strong>Ignore:</strong> their breadth; their 9th-grade mock-exam line is surprisingly hard to navigate — your focus is the advantage.</td>
+            </tr>
+            <tr>
+              <td><strong>prijimacky-onlinekurzy.cz</strong></td>
+              <td>Online video courses + simulations, access until exam day</td>
+              <td class="num">not public</td>
+              <td>4.–9.</td>
+              <td><strong>Learn:</strong> "access until exam day" framing removes urgency objections. <strong>Ignore:</strong> fully online — exactly what you differentiate against.</td>
+            </tr>
+            <tr>
+              <td><strong>zkousky-nanecisto.cz</strong></td>
+              <td>22-week live courses + mock exams + camps</td>
+              <td class="num">not public</td>
+              <td>3.–9.</td>
+              <td><strong>Learn:</strong> long courses serve a different buyer (season-long commitment). Frame your sessions as "try before you commit" or "alongside your course".</td>
+            </tr>
+            <tr>
+              <td><strong>dostansenagympl.cz</strong></td>
+              <td>Live online courses, groups of max 10, recordings</td>
+              <td class="num">not public</td>
+              <td>5. 7. 9.</td>
+              <td><strong>Learn:</strong> "max 10 students" is premium positioning — your in-person intimacy deserves the same explicit framing.</td>
+            </tr>
+            <tr>
+              <td><strong>umimeto.org</strong></td>
+              <td>Freemium adaptive practice app</td>
+              <td class="num">free tier</td>
+              <td>1.–9.</td>
+              <td><strong>Learn:</strong> recommend it as a homework tool — it makes you the helpful expert, and a mock exam is the natural next step it can't offer.</td>
+            </tr>
+            <tr>
+              <td><strong>statniprijimacky.cz</strong></td>
+              <td>Free practice tests + paid courses</td>
+              <td class="num">tests free</td>
+              <td>5. 7. 9.</td>
+              <td><strong>Learn:</strong> free tests as lead magnets are everywhere — your free test must lead somewhere (email → booking), not just exist.</td>
+            </tr>
+            <tr>
+              <td><strong>You</strong> <span class="small">(for reference)</span></td>
+              <td>In-person mock exams at ZŠ Dobříš + online + tutoring</td>
+              <td class="num">490 / session</td>
+              <td>9. <span class="small">(5. soon)</span></td>
+              <td>The only one on this list with a visible per-session price <em>and</em> a real exam room outside Prague.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small">*Scio's own pages redirected in circles today (multiple 301→404 chains) — we could not confirm a price from their site. All "not public" entries: checked the company's own site on June 11, 2026; several price pages returned 404. Full notes in the appendix.</p>
+
+      <h3>Where you win — and where you honestly don't</h3>
+      <ul>
+        <li><strong>You win on price and entry barrier.</strong> <span class="chip chip-observed">Observed</span> A family can try you for 490 Kč. The market leader asks 14 500 Kč upfront. That is not just cheaper — it is a completely different decision for the parent: no sunk cost, no leap of faith.</li>
+        <li><strong>You win on geography — if you say it loudly.</strong> <span class="chip chip-observed">Observed</span> Every national player is online or big-city. A real exam room at ZŠ Dobříš with zero commute is something they cannot copy without local partners. Right now the site whispers this; it should shout it.</li>
+        <li><strong>You win on peer credibility.</strong> <span class="chip chip-observed">Observed</span> "Scored 97/100 on this exact exam" beats "our experienced lecturers" for a 15-year-old. No national brand can say it.</li>
+        <li><strong>You lose on breadth and continuity.</strong> <span class="chip chip-observed">Observed</span> Season-long courses with homework support (to-das, zkousky-nanecisto) serve families who want full-service prep. Don't chase them — position as the honest check-up: "find out where you really stand, before or alongside any course."</li>
+        <li><strong>You lose on search visibility — for now.</strong> <span class="chip chip-inferred">Inferred</span> Years of SEO put the big brands first on Google. Your channel is the one they can't use: school corridors, class WhatsApp groups, teachers, and the Dobříš word-of-mouth network. Treat local presence as your main distribution, with the website as the place it converts.</li>
+      </ul>
+
+      <div class="callout">
+        <p><strong>The exam calendar is your marketing calendar.</strong> <span class="chip chip-observed">Observed</span> For school year 2025/26: applications (přihlášky) ran February 1–20 via the state digital system (DiPSy); main exams were April 10 &amp; 13 (9th grade) and April 14–15 (víceletá gymnázia). 2027 dates were not published as of today — expect the same pattern. <span class="receipt">Source: prijimacky.cermat.cz, June 11, 2026.</span></p>
+        <p>What it means: the decisive buying window is <strong>October–January</strong>. Be visible and running sessions by October. Expect a second panic spike in March from families whose January mock results scared them — have March dates and tutoring capacity ready in advance.</p>
+      </div>
+
+      <h3>The local picture (Dobříš / Příbram / Beroun)</h3>
+      <p><span class="chip chip-inferred">Inferred</span> We could not properly map local competition today — the tutor marketplaces (doucuji.eu, naucmese.cz) blocked automated checks, and no school-run prep course (přípravný kurz) in the corridor was findable. The absence of visible organized local competition is consistent with your founding story, but it is unconfirmed. <strong>First low-risk experiment:</strong> 30 minutes of manual searching + one question in a local parents' Facebook group tells you more than any tool we ran today.</p>
     </section>
 
     <!-- ============ 11 ROADMAP ============ -->
     <section id="roadmap" aria-labelledby="roadmap-h">
       <h2 id="roadmap-h"><span class="secnum">11</span>Roadmap: Now / Next / Later</h2>
-      <!-- SLOT:ROADMAP -->
+      <p class="section-intro">Everything above, turned into a sequence two students can actually do. Effort is honest; impact is our judgment <span class="chip chip-inferred">Inferred</span>. Each row points back to its evidence.</p>
+
+      <div class="roadmap-stage">
+        <h3><span class="stage-pill">Now</span> June — wake the site up <span class="effort">(≈ 2–3 evenings total)</span></h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Do</th><th class="num">Effort</th><th>Why</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Season reset:</strong> make the free test evergreen (delivered by email, not tied to an event), auto-hide past dates, retire the April notice</td><td class="num">1 evening</td><td>Finding 1 — next-year parents are searching <em>now</em>, and the site tells them you're gone</td></tr>
+              <tr><td><strong>SEO plugin</strong> (Rank Math/Yoast): meta descriptions, share images (OG), short titles, LocalBusiness + FAQ markup</td><td class="num">2 hours</td><td>Findings 2 &amp; 5 — makes every WhatsApp share and Google result work for you</td></tr>
+              <tr><td><strong>Fix the font loading</strong> (regenerate Elementor fonts over HTTPS) + the „PŘÍJÍMAČKY" H1 typo</td><td class="num">30 min</td><td>Findings 3 &amp; 6 — visible quality, trivial cost</td></tr>
+              <tr><td><strong>Install GA4 + Search Console</strong></td><td class="num">1 evening</td><td>Finding 4 — you can't improve what you can't see</td></tr>
+              <tr><td><strong>Legal afternoon:</strong> IČO in the footer, cookie consent plugin, testimonial consent or „Václav S." format</td><td class="num">1 afternoon</td><td>Finding 8 — cheap now, expensive later</td></tr>
+              <tr><td><strong>Domain email</strong> (ahoj@…) forwarding to Gmail</td><td class="num">1 hour</td><td>Finding 9 — quiet trust signal at the front door</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="roadmap-stage">
+        <h3><span class="stage-pill next">Next</span> July–September — build for the season <span class="effort">(≈ 3–4 days spread over summer)</span></h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Do</th><th class="num">Effort</th><th>Why</th></tr></thead>
+            <tbody>
+              <tr><td><strong>New hero + one action color</strong> per sections 7–8 (the mockup is a working start)</td><td class="num">1–2 days</td><td>Audit — the first screen finally sells</td></tr>
+              <tr><td><strong>Visible price table</strong> (1/3/6/9 sessions) + packages as real checkout products + „doučování od X Kč"</td><td class="num">½ day</td><td>Findings 7 &amp; 8 — removes friction exactly where money changes hands</td></tr>
+              <tr><td><strong>Google Business Profile + Mapy.cz listing</strong></td><td class="num">1 evening</td><td>Section 10 — "doučování Dobříš" on the map likely beats classic SEO locally</td></tr>
+              <tr><td><strong>Email nurture:</strong> welcome email + monthly tips for the free-test list</td><td class="num">½ day</td><td>Section 9.4 — turns the lead magnet into bookings by October</td></tr>
+              <tr><td><strong>Two blog posts before October</strong> („Jak se připravit na přijímačky 2027", „Termíny, přihlášky a DiPSy 2027")</td><td class="num">2 evenings</td><td>Section 9.2 — the only channel that compounds; September searches start it</td></tr>
+              <tr><td><strong>Collect consented photo testimonials</strong> at autumn sessions (a one-page consent form)</td><td class="num">ongoing</td><td>Finding 8 + section 3 — your strongest proof, made legal and stronger</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="roadmap-stage">
+        <h3><span class="stage-pill later">Later</span> the season &amp; beyond <span class="effort">(when the above holds)</span></h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Do</th><th class="num">Effort</th><th>Why</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Výsledky &amp; recenze page</strong> with real score improvements</td><td class="num">1 day</td><td>Section 9.2 — the trust anchor every page links to</td></tr>
+              <tr><td><strong>5th-grade track</strong> (víceletá gymnázia) when the product is ready</td><td class="num">product first</td><td>A second audience with the same machine — don't build the page before the product</td></tr>
+              <tr><td><strong>Season-rollover checklist + free uptime monitor</strong></td><td class="num">1 evening</td><td>Finding 1, permanently solved as a ritual, not a memory</td></tr>
+              <tr><td><strong>Performance diet</strong> (image compression, plugin cleanup)</td><td class="num">1 day</td><td>Finding 10 — after the funnel works</td></tr>
+              <tr><td><strong>Local partnerships</strong> (teachers, schools, DDM in the Příbram–Beroun corridor)</td><td class="num">ongoing</td><td>Section 10 — the distribution channel the national brands can't copy</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="callout">
+        <p><strong>If you do only three things:</strong> the season reset, the SEO plugin, and the price table. One week of evenings, and the site goes from "are they still running?" to "this is exactly what we need, and it costs 490 Kč to find out."</p>
+      </div>
     </section>
 
     <!-- ============ 12 SHOWCASE ============ -->
     <section id="showcase" aria-labelledby="showcase-h">
       <h2 id="showcase-h"><span class="secnum">12</span>How this report was made</h2>
-      <!-- SLOT:SHOWCASE -->
+      <p class="section-intro">This report is also a demo. Everything below was done in one afternoon by one person directing a team of AI tools. We document it honestly — including what failed — because the same approach could work for your business.</p>
+
+      <h3>The toolchain, and what each tool actually did</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Tool</th><th>Role</th><th>What it contributed here</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Claude Code</strong> <span class="small">(Anthropic, Fable&nbsp;5)</span></td>
+              <td>Orchestrator + writer</td>
+              <td>Planned the engagement, ran three parallel research agents (site audit · market &amp; prices · blueprint design), synthesized everything, designed and wrote this page.</td>
+            </tr>
+            <tr>
+              <td><strong>Codex CLI</strong> <span class="small">(OpenAI)</span></td>
+              <td>Adversarial reviewer</td>
+              <td>A genuinely different AI reviewed the work plan before execution: 13 findings, including "add a backup publishing path" and "blur student names in screenshots — they may be minors." <!-- SLOT:CODEX-R2 --> A second model catching the first model's blind spots is the single most useful pattern in this whole setup.</td>
+            </tr>
+            <tr>
+              <td><strong>Grok</strong> <span class="small">(xAI)</span></td>
+              <td>Real-time research</td>
+              <td>Honest note: we tried to use it for practitioner research and hit a quota wall. It contributed nothing today. We say this because trust in section 5 depends on honesty in section 12.</td>
+            </tr>
+            <tr>
+              <td><strong>Impeccable</strong> <span class="small">(open-source design skills)</span></td>
+              <td>Design reference</td>
+              <td>Typography, layout, and polish principles applied to this page and to the style guide in section 7 — e.g. "no default fonts," "spacing rhythm over decoration," "tinted neutrals, never pure gray."</td>
+            </tr>
+            <tr>
+              <td><strong>Puppeteer + heuristic checklist</strong></td>
+              <td>Evidence capture</td>
+              <td>Automated browser screenshots of your site (desktop + mobile) and a 20-point design checklist run against the homepage — the evidence base for section 6.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>The working rules that mattered more than the tools</h3>
+      <ul>
+        <li><strong>Every claim is tagged</strong> Observed or Inferred, and every number carries a source with today's date. AI tools confidently make things up; this discipline is the antidote.</li>
+        <li><strong>A second AI reviews the first.</strong> Same-model review tends to agree with itself; cross-model review (Claude ↔ Codex) reliably finds real problems.</li>
+        <li><strong>A human reads everything last.</strong> Mark reviewed this page end-to-end before you got the link. AI drafted; a human signed.</li>
+      </ul>
+
+      <h3>What this could do for <em>your</em> business</h3>
+      <p><span class="chip chip-inferred">Inferred</span> — ideas to discuss, not homework:</p>
+      <ul>
+        <li><strong>Content engine for the seasonal calendar:</strong> draft the monthly blog post ("Jak se připravit na přijímačky" series), then you fact-check and add your voice. An afternoon per month becomes an hour.</li>
+        <li><strong>Practice-material assistant:</strong> generate variations of exercise types you already teach — you stay the editor and quality gate, which is exactly the part you're best at.</li>
+        <li><strong>Parent communication:</strong> results emails, FAQ answers, booking reminders — drafted in seconds, personalized by you.</li>
+        <li><strong>The honest limit:</strong> AI output in Czech needs your native review, AI "facts" need checking, and none of it replaces what actually sells your product — two people who passed the exam, in the room.</li>
+      </ul>
     </section>
 
     <!-- ============ 13 CAVEATS ============ -->
@@ -271,7 +626,27 @@
     <!-- ============ 14 APPENDICES ============ -->
     <section id="appendix" aria-labelledby="appendix-h">
       <h2 id="appendix-h"><span class="secnum">14</span>Appendices</h2>
-      <!-- SLOT:APPENDIX -->
+      <details class="appendix">
+        <summary>A · How we verified the free-test finding</summary>
+        <p>Our very first automated check of /testzdarma/ (12:10 today) returned a 404 — "page not found." That would have been the headline finding: <em>broken lead-gen funnel</em>. But one failed fetch isn't evidence, so the rule was: confirm on every URL variant with a real browser, or downgrade the claim.</p>
+        <p><strong>Observed at 13:03:</strong> the homepage nav and CTA both link to <code>/testzdarma/</code>; direct fetches of all four variants (with/without www, with/without trailing slash) returned HTTP 200; the page renders with its content. <strong>Verdict: the page works — the morning 404 was a server hiccup or cache miss.</strong></p>
+        <p><strong>What it may mean for you:</strong> the page is alive but nobody would know if it weren't — there's no uptime monitoring, and our one random morning check <em>did</em> catch it failing once. And the deeper finding stood: the page's content is frozen in last season (thanks for November, signup for March). <strong>First low-risk experiment:</strong> a free uptime monitor (e.g. UptimeRobot) pinging /testzdarma/ — five minutes to set up, tells you forever.</p>
+        <p class="small">We tell this story because it's also the honest demo of how AI-assisted research should work: the tool was wrong at first, the verification rule caught it, and the finding got <em>better</em> — more precise, more useful — instead of louder.</p>
+      </details>
+      <details class="appendix">
+        <summary>B · Price-research notes (what we could not confirm)</summary>
+        <p>Checked on the companies' own websites, June 11, 2026. <strong>Not confirmed:</strong> Scio mock-exam pricing (their own pages redirected 301→404 in circles); prijimacky-onlinekurzy.cz course prices (no amounts on homepage, product pages 404); dostansenagympl.cz (price pages 404 — they advertise instalments); zkousky-nanecisto.cz (price pages 404); to-das.cz smaller packages (5/8/10/15 sessions listed without prices — only the 14 500 Kč / 21-session flagship is public). Local marketplaces doucuji.eu (HTTP 403) and naucmese.cz (404s) blocked automated checks. CERMAT had not published 2027 exam dates as of today.</p>
+        <p><strong>What it may mean for you:</strong> hidden prices are the market norm — which makes your visible 490 Kč a trust move, not a weakness. <strong>First low-risk experiment:</strong> mystery-shop two competitors by email (ask for a price as a parent) and you'll know the real numbers within a day.</p>
+      </details>
+      <details class="appendix">
+        <summary>C · What we would research next</summary>
+        <ul>
+          <li><strong>Five parent interviews.</strong> Why did they buy? Where did they first hear about you? What almost stopped them? (The "Mom Test" style: ask about what they did, not what they would do.)</li>
+          <li><strong>Real local landscape scan</strong> — manual, 30 minutes: Dobříš/Příbram parent groups on Facebook, school notice boards, DDM course lists.</li>
+          <li><strong>Mystery-shop pricing</strong> of Scio and to-das smaller packages.</li>
+          <li><strong>Google Business Profile + Mapy.cz presence check</strong> — being findable on the map for "doučování Dobříš" may matter more locally than classic SEO.</li>
+        </ul>
+      </details>
     </section>
 
   </main>

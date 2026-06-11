@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Návrh: nová hlavička domovské stránky — Přijímačky NoStress</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Proposed brand tokens — see report section 7 */
+  :root {
+    --ns-cream:   #FDFBF7;
+    --ns-ink:     #232A33;
+    --ns-ink-soft:#5B6570;
+    --ns-orange:  #E8740C;   /* the single action color */
+    --ns-orange-deep: #C45F05;
+    --ns-sky:     #EAF2F6;   /* one calm support tint */
+    --ns-line:    #E7E0D2;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--ns-cream); color: var(--ns-ink);
+    font-family: "Source Sans 3", system-ui, sans-serif; line-height: 1.55;
+  }
+  .nav {
+    display: flex; align-items: center; gap: 1.5rem;
+    padding: 0.9rem clamp(1rem, 4vw, 3rem);
+    border-bottom: 1px solid var(--ns-line); background: #fff;
+  }
+  .logo { font-family: Lora, serif; font-weight: 700; font-size: 1.15rem; letter-spacing: -0.01em; }
+  .logo span { color: var(--ns-orange); }
+  .nav nav { margin-left: auto; display: flex; gap: 1.4rem; align-items: center; }
+  .nav a { color: var(--ns-ink-soft); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+  .nav a:hover { color: var(--ns-ink); }
+  .nav .cta { background: var(--ns-orange); color: #fff; padding: 0.5rem 1rem; border-radius: 8px; }
+  .nav .cta:hover { background: var(--ns-orange-deep); color: #fff; }
+  @media (max-width: 720px) { .nav nav a:not(.cta) { display: none; } }
+
+  .hero {
+    max-width: 1100px; margin: 0 auto;
+    padding: clamp(2.5rem, 7vw, 5rem) clamp(1rem, 4vw, 3rem) clamp(2rem, 5vw, 3.5rem);
+    display: grid; gap: 2.5rem; grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+    align-items: center;
+  }
+  @media (max-width: 860px) { .hero { grid-template-columns: 1fr; } .hero-side { display: none; } }
+
+  .season-chip {
+    display: inline-block; background: var(--ns-sky); color: var(--ns-ink-soft);
+    font-size: 0.85rem; font-weight: 600; padding: 0.3rem 0.8rem; border-radius: 99px;
+    margin-bottom: 1.1rem;
+  }
+  .season-chip strong { color: var(--ns-ink); }
+
+  h1 {
+    font-family: Lora, serif; font-weight: 700;
+    font-size: clamp(2rem, 4.6vw, 3.3rem); line-height: 1.12; letter-spacing: -0.015em;
+    margin: 0 0 1rem;
+  }
+  h1 em { font-style: normal; position: relative; white-space: nowrap; }
+  h1 em::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0.04em; height: 0.18em;
+    background: color-mix(in srgb, var(--ns-orange) 30%, transparent); border-radius: 2px; z-index: -1;
+  }
+  .sub {
+    font-size: clamp(1.05rem, 1.9vw, 1.25rem); color: var(--ns-ink-soft);
+    max-width: 54ch; margin: 0 0 1.6rem;
+  }
+  .actions { display: flex; flex-wrap: wrap; gap: 0.9rem 1.2rem; align-items: center; margin-bottom: 2rem; }
+  .btn {
+    display: inline-block; background: var(--ns-orange); color: #fff; text-decoration: none;
+    font-weight: 700; font-size: 1.05rem; padding: 0.85rem 1.6rem; border-radius: 10px;
+    box-shadow: 0 2px 0 var(--ns-orange-deep); transition: transform 150ms ease-out, background 150ms ease-out;
+  }
+  .btn:hover { background: var(--ns-orange-deep); transform: translateY(-1px); }
+  .btn:focus-visible { outline: 3px solid var(--ns-ink); outline-offset: 2px; }
+  .link2 { color: var(--ns-ink); font-weight: 600; }
+
+  .trust { display: flex; flex-wrap: wrap; gap: 0.5rem 1.6rem; padding: 0; margin: 0; list-style: none; }
+  .trust li { font-size: 0.95rem; color: var(--ns-ink-soft); display: flex; gap: 0.45rem; align-items: baseline; }
+  .trust li::before { content: "✓"; color: var(--ns-orange); font-weight: 700; }
+  .trust strong { color: var(--ns-ink); }
+
+  .hero-side {
+    background: #fff; border: 1px solid var(--ns-line); border-radius: 14px;
+    padding: 1.5rem; box-shadow: 0 10px 30px rgba(35, 42, 51, 0.06);
+  }
+  .hero-side h2 { font-family: Lora, serif; font-size: 1.1rem; margin: 0 0 0.7rem; }
+  .hero-side ol { margin: 0; padding-left: 1.2rem; color: var(--ns-ink-soft); font-size: 0.95rem; }
+  .hero-side li { margin-bottom: 0.45rem; }
+  .hero-side .mini { margin-top: 0.9rem; font-size: 0.85rem; color: var(--ns-ink-soft); border-top: 1px dashed var(--ns-line); padding-top: 0.8rem; }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="logo">Přijímačky <span>NoStress</span></div>
+  <nav>
+    <a href="#">Přijímačky nanečisto</a>
+    <a href="#">Doučování</a>
+    <a href="#">Termíny a ceny</a>
+    <a class="cta" href="#">Test zdarma</a>
+  </nav>
+</header>
+
+<main class="hero">
+  <div>
+    <p class="season-chip">Školní rok 2026/27 · přihlášky na SŠ <strong>v únoru</strong> · přijímačky <strong>v dubnu</strong></p>
+    <h1>Složili jsme přijímačky sami.<br>Teď <em>pomůžeme i tobě</em>.</h1>
+    <p class="sub">Přijímačky nanečisto a doučování pro deváťáky — v reálné učebně v Dobříši i online. Stejná pravidla jako u CERMATu, rozbor chyb po každém testu a klid, až půjde o všechno.</p>
+    <div class="actions">
+      <a class="btn" href="#">Vyzkoušej test zdarma</a>
+      <a class="link2" href="#">Termíny a ceny →</a>
+    </div>
+    <ul class="trust">
+      <li><strong>97/100</strong>&nbsp;u skutečných přijímaček</li>
+      <li>testujeme v učebně <strong>ZŠ Dobříš</strong></li>
+      <li>od <strong>490 Kč</strong> za termín</li>
+    </ul>
+  </div>
+  <aside class="hero-side" aria-label="Jak to funguje">
+    <h2>Jak to funguje</h2>
+    <ol>
+      <li>Vyzkoušíš test zdarma — zjistíš, kde stojíš.</li>
+      <li>Přijdeš na přijímačky nanečisto jako na ostro.</li>
+      <li>Projdeme spolu chyby a co zlepšit.</li>
+    </ol>
+    <p class="mini">Vedou ti to studenti, kteří přijímačkami sami prošli — a ví, jak na ně.</p>
+  </aside>
+</main>
+
+</body>
+</html>
