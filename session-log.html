@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="The full session log behind the Přijímačky No-Stress review — every prompt, every correction, with honest numbers.">
+  <title>Session log — how the review was actually made</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .prompt-block {
+      background: var(--paper-raise); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: var(--s-2) var(--s-3); margin: var(--s-2) 0; font-size: 0.95rem; line-height: 1.55;
+      white-space: pre-wrap; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.82rem;
+      overflow-x: auto;
+    }
+    .said { border-left: 3px solid var(--amber); background: var(--amber-wash); padding: var(--s-2) var(--s-3); border-radius: 0 var(--radius) var(--radius) 0; margin: var(--s-2) 0; max-width: var(--measure); }
+    .said .who { font-family: "Bricolage Grotesque", system-ui, sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--amber); }
+    .redacted { background: var(--sev3-wash); color: var(--sev3); padding: 0.05em 0.4em; border-radius: 4px; font-size: 0.85em; white-space: nowrap; }
+    .ts { font-variant-numeric: tabular-nums; color: var(--ink-faint); font-family: "Bricolage Grotesque", system-ui, sans-serif; font-size: 0.82rem; }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#numbers">Skip to the numbers</a>
+
+<div class="page" id="page-top">
+
+  <header class="report-header">
+    <p class="eyebrow">Companion to the review · the unpolished reality</p>
+    <h1>Session log<br><span style="font-weight:400">how the review was actually made</span></h1>
+    <p class="subtitle">Every operator message, every steering correction, and the real prompts that drove the AI agents — with measured numbers, including the failures. Companion page to <a href="index.html">the review</a>.</p>
+    <div class="meta">
+      <span>June 11, 2026</span>
+      <span>·</span>
+      <span>one working day, measured below</span>
+      <span>·</span>
+      <span>long on purpose</span>
+    </div>
+  </header>
+
+  <div class="toc-wrap">
+    <nav class="toc toc-desktop" aria-label="Contents">
+      <p class="toc-title">Contents</p>
+      <ol>
+        <li><a href="#about"><span class="toc-num">1</span>What this is</a></li>
+        <li><a href="#numbers"><span class="toc-num">2</span>The numbers (measured)</a></li>
+        <li><a href="#replay"><span class="toc-num">3</span>The session, replayed</a></li>
+        <li><a href="#prompts"><span class="toc-num">4</span>The actual prompts</a></li>
+        <li><a href="#replicate"><span class="toc-num">5</span>Replicating this</a></li>
+      </ol>
+    </nav>
+    <details class="toc-mobile">
+      <summary>Contents</summary>
+      <nav class="toc" aria-label="Contents (mobile)">
+        <ol>
+          <li><a href="#about"><span class="toc-num">1</span>What this is</a></li>
+          <li><a href="#numbers"><span class="toc-num">2</span>The numbers (measured)</a></li>
+          <li><a href="#replay"><span class="toc-num">3</span>The session, replayed</a></li>
+          <li><a href="#prompts"><span class="toc-num">4</span>The actual prompts</a></li>
+          <li><a href="#replicate"><span class="toc-num">5</span>Replicating this</a></li>
+        </ol>
+      </nav>
+    </details>
+  </div>
+
+  <main id="main">
+
+    <section id="about" aria-labelledby="about-h">
+      <h2 id="about-h"><span class="secnum">1</span>What this is</h2>
+      <p>The review you came from says AI made it. This page proves it — and shows the working reality, which is messier and more human than "AI made it" sounds. You'll see what Mark actually asked (he spoke or typed casually, typos included), how he corrected course four times, what the AI got wrong, and what everything cost in time and tokens.</p>
+      <p><strong>What is redacted, and why:</strong> a few references to Mark's internal tooling, private notes, and one earlier engagement for a different client are marked <span class="redacted">[internal — redacted]</span>. Nothing about <em>this</em> review is hidden. Numbers come from the session transcript and git history, not from memory — including one place where our own internal log had wrong times and the git record corrected it (section 3, marked honestly).</p>
+    </section>
+
+    <section id="numbers" aria-labelledby="numbers-h">
+      <h2 id="numbers-h"><span class="secnum">2</span>The numbers (measured)</h2>
+      <div class="table-wrap">
+        <table>
+          <tbody>
+            <tr><td>Wall clock, briefing → version 2 live</td><td class="num">12:19 → 20:20 (~8 h)</td></tr>
+            <tr><td>… of which the AI was working</td><td class="num">≈ 4.5–5 h</td></tr>
+            <tr><td>… of which it sat waiting for the human</td><td class="num">≈ 3–3.5 h <span class="small">(Mark was traveling — and the AI shipped version 1 during that window)</span></td></tr>
+            <tr><td>Operator messages (Mark)</td><td class="num">7 <span class="small">+ 2 structured Q&amp;A rounds + 2 plan-approval gates</span></td></tr>
+            <tr><td>Orchestrator replies / tool actions</td><td class="num">337 / 187</td></tr>
+            <tr><td>Helper AI agents dispatched</td><td class="num">11 <span class="small">(research, audit, planning, stress-tests)</span></td></tr>
+            <tr><td>Cross-model reviews</td><td class="num">3× Codex + 1× Gemini <span class="small">(+ 1 Grok attempt — quota-blocked, skipped honestly)</span></td></tr>
+            <tr><td>AI output produced</td><td class="num">≈ 1.13 M tokens (orchestrator) + ≈ 0.2 M (research agents) + ≈ 77 k (Codex reviews)</td></tr>
+            <tr><td>Context re-read from cache</td><td class="num">≈ 87 M tokens <span class="small">— the hidden cost of one long session: the AI re-reads its whole history constantly</span></td></tr>
+            <tr><td>Git commits / deploys</td><td class="num">10 / 4 <span class="small">(placeholder · v1 · v1-reviewed · v2 · v2-reviewed)</span></td></tr>
+            <tr><td>What it cost</td><td class="num">marginal cost ≈ 0 <span class="small">— flat-rate subscriptions; the same volume on pay-per-use API pricing would be roughly tens of dollars <span class="chip chip-inferred">Inferred</span></span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small">How measured: timestamps from git history and the session transcript; token counts summed from the transcript's per-message usage records; agent counts from dispatch records. This page itself was added after 20:20 and is not counted.</p>
+    </section>
+
+    <section id="replay" aria-labelledby="replay-h">
+      <h2 id="replay-h"><span class="secnum">3</span>The session, replayed</h2>
+      <p class="section-intro">Eleven moments. Each one: what was said, what the AI did, what shipped. Steering is the job — the first prompt matters less than the corrections.</p>
+
+      <div class="finding">
+        <div class="finding-head"><h3><span class="ts">12:19</span> · The briefing</h3></div>
+        <p>Mark described the client and the goal in one long, casual voice-note-style message: a friend's exam-prep business, review it honestly, research the competition, propose improvements, showcase the AI tools used, deploy as a shareable web page — by the afternoon. He also set the working style: study consulting approaches first, clarify before executing, be a trusted mentor, "no participation trophies." Full text in section 4.</p>
+      </div>
+
+      <div class="finding">
+        <div class="finding-head"><h3><span class="ts">12:20–12:55</span> · Recon, clarifying questions, plan — and an adversarial review of the plan</h3></div>
+        <p>Three AI agents explored in parallel (the client's website; internal references <span class="redacted">[internal — redacted]</span>). Then the AI asked Mark four scoping questions (language? publish where? how ambitious visually? hard deadline?) — answers locked the contract. A plan was drafted, stress-tested by a planning agent (it caught a 30-minute budget overrun and a privacy leak risk in the repo layout), and then <strong>Mark ordered a second AI (Codex) to attack the plan</strong>: 13 findings, including "add a backup publishing path" and "students in screenshots may be minors — protect their names." The plan changed before any work started.</p>
+      </div>
+
+      <div class="finding">
+        <div class="finding-head"><h3><span class="ts">12:58–13:05</span> · Deploy first, build second</h3></div>
+        <p>The repository went up and a placeholder page went <em>live</em> at minute seven. Reason: if publishing was going to fail, better to learn it at 13:05 with hours to react than at 14:55. From this moment the deliverable always existed; work only made it more complete.</p>
+      </div>
+
+      <div class="finding">
+        <div class="finding-head"><h3><span class="ts">13:01–13:14</span> · The research wave</h3></div>
+        <p>Three research agents ran at once: a site auditor (browser screenshots, accessibility scan, technical checks), a market researcher (competitor prices from their own sites only — no aggregators), and a blueprint designer (the from-scratch architecture). The auditor's first claim — "the free-test page is dead" — was <strong>downgraded by the evidence rule</strong> to "alive but frozen in last season," which became the report's headline finding. The AI's error, caught by process, made the finding better.</p>
+      </div>
+
+      <div class="finding">
+        <div class="finding-head"><h3><span class="ts">13:19</span> · Two corrections and a handoff</h3></div>
+        <p>Mark, about to leave with no internet: dropped one planned deliverable (a separate talking-points file — "no, keep it in the summary"), killed a stylistic direction left over from an earlier engagement (<span class="redacted">[internal — redacted]</span> — "no personal-letter style, that was stupid"), and asked whether the session could finish alone. It could: everything pushes to the public web, so the laptop only needed power and a connection.</p>
+      </div>
+
+      <div class="finding">
+        <div class="finding-head"><h3><span class="ts">13:19–15:43</span> · The autonomous stretch</h3></div>
+        <p>With Mark traveling, the session wrote the full report, built the Czech hero mockup (and screenshotted it to check its own work before embedding), ran a second Codex review of the finished page (12 findings — including a real self-contradiction between two sections and idioms too hard for B1 English readers), folded every finding, and pushed. <strong>Version 1 went live at 15:36.</strong> Honest note: the AI had promised "ten more minutes" at 13:19. It took 2 hours 17 — agent time estimates are narrative, wall clocks are real. (Our internal log first recorded these times wrong, too; the git history corrected it.)</p>
+      </div>
+
+      <div class="finding">
+        <div class="finding-head"><h3><span class="ts">15:54</span> · "I'm back" — and three hours of human time</h3></div>
+        <p>Mark returned, read the live report, met with the client side, and thought. The session idled. This matters for honest accounting: roughly 40% of the 8-hour wall clock was the human reading, deciding, and living life — not the AI working. A solo founder replicating this should budget for <em>their own</em> attention, not just the AI's speed.</p>
+      </div>
+
+      <div class="finding">
+        <div class="finding-head"><h3><span class="ts">19:06</span> · The big steering message — version 2 is born</h3></div>
+        <p>One long message changed the report's center of gravity: fix the unit-less "97/100", gloss the jargon ("hero" means nothing to non-developers), and — the real shift — <em>"I don't want him to get a fish. I want to teach him how to fish."</em> The how-to half of the report had ignored AI entirely; Mark wanted it to dominate with it. He also set guardrails: no curriculum ("AI is about learning while doing, not syllabuses"), no tool rankings, $20/month is enough, build model-agnostic skills. Full (lightly redacted) text in section 4.</p>
+      </div>
+
+      <div class="finding">
+        <div class="finding-head"><h3><span class="ts">19:06–19:52</span> · Research before writing, again</h3></div>
+        <p>Two research agents studied how people actually learn AI (a "couch to 5K for AI" program, a teaching skill by a well-known educator, Anthropic's free fluency course, practitioner habits), and a planning agent stress-tested the design — its sharpest catch: the draft "value table" was exactly the fish-handing the new section was supposed to replace. Cut. Mark rejected the plan once more with comments (first half of the report stays; the learning layer is "assisted self-paced learning — your business is the course"), then approved.</p>
+      </div>
+
+      <div class="finding">
+        <div class="finding-head"><h3><span class="ts">19:52–20:08</span> · Build + triple review</h3></div>
+        <p>Section 13, the kitchen-reveal in section 12, twelve "With AI" recipe lines in the roadmap, renumbering, the mockup fix — then three review lanes at once: Codex round 3 (10 findings — mostly "$20 plan can do everything" stated too strongly; softened), Gemini as a UX researcher (5 findings — jargon glosses, navigation aids; 4 folded, 1 honestly deferred), and an accessibility scan (clean). Live and verified by 20:20.</p>
+      </div>
+
+      <div class="finding">
+        <div class="finding-head"><h3><span class="ts">20:29</span> · "What we're missing is a trace"</h3></div>
+        <p>Mark's last steering: make the session itself visible — simplified replay, honest numbers including idle time, and the full prompts behind one deliberate click. You are reading the result.</p>
+      </div>
+      <p class="toc-return"><a href="#page-top">↑ Back to contents</a></p>
+    </section>
+
+    <section id="prompts" aria-labelledby="prompts-h">
+      <h2 id="prompts-h"><span class="secnum">4</span>The actual prompts</h2>
+      <p class="section-intro">The replicable artifacts, full length. Mark's messages are quoted as typed (casual, imperfect — that's the realism). The agent prompts were written by the orchestrator AI; they are the most reusable part: swap the business details and they work for any small company.</p>
+
+      <details class="appendix">
+        <summary>4.1 · Mark's briefing (12:19) — the prompt that started everything</summary>
+        <div class="said"><p class="who">Mark said (abridged only where marked)</p>
+        <p>"I have a new project-client: my friend is running a little website in a small town in the Czech Republic. He is a 19-year-old just finishing his high school, and he started this little business of preparing students in his local town for the test exams for the high schools. […] He shared with me a website, and I want to review it, try to understand the business, try to understand the competition, and think about suggestions for improvement. I definitely have suggestions for improvement on the UX and UI side […] give it some consolidated design style guide, and basically elevate the whole interface experience without being super flashy or anything that's not necessary. We also need to be appropriate and truly honestly representing him himself and his business […] What I want from you is to start in some logical, structured fashion. Help me think through how we set up a plan. I think at first we should research some consulting concepts, small business consulting or literally startup consulting concepts […] I'm going to be meeting him in a few hours in the afternoon, and I want to have a little brief. […] We want to be encouraging. Remember, it's a very young entrepreneur starting his business, still a student at high school. We don't want to be just giving participation trophies either. We want to be like a trusted mentor for him […] Alongside, we're also going to document what kind of steps we have taken, what kind of tools we have used, and why. […] Maybe the very best start would be to start with a Q&amp;A session […] to just clarify what we're trying to do and why, and what's in scope and out of scope. […] The output should be a little report that we will upload in HTML form […] deploy it on a Github pages so that we can very easily share it." <span class="redacted">[references to internal tools and an earlier engagement removed]</span></p></div>
+        <p class="small">Notice what makes this brief work despite the casual style: who the client is, the honest-mentor tone contract, the deliverable format, the deadline, and permission to structure the approach. Content beats polish.</p>
+      </details>
+
+      <details class="appendix">
+        <summary>4.2 · The four scoping questions the AI asked back (12:20)</summary>
+        <ul>
+          <li><strong>Language?</strong> → English, simple (B1–B2), Czech terms in brackets — "Ondra and Šimon speak English and need to practice it."</li>
+          <li><strong>Publish when/where?</strong> → Public link before the meeting, neutral repo name, search engines told not to index, ~30-day takedown.</li>
+          <li><strong>Visual ambition?</strong> → Everything: audit + style guide + hero mockup + a ground-up "design it from scratch" blueprint.</li>
+          <li><strong>Hard deadline?</strong> → Link in hand by ~15:00.</li>
+        </ul>
+        <p class="small">Four questions, four binding answers. This ten-minute exchange prevented hours of building the wrong thing — it was the highest-leverage step of the day.</p>
+      </details>
+
+      <details class="appendix">
+        <summary>4.3 · The "voice card" — pasted into every research agent's instructions</summary>
+        <div class="prompt-block">VOICE CARD (binding): simple English (B1-B2), short sentences. Czech terms in
+brackets with correct diacritics on first use. Tag every claim [Observed]
+(verified today, with URL + time) or [Inferred] (reasoned, say from what).
+Every number/fact needs a receipt: URL + short quote + as-of timestamp.
+First names only (Ondra, Šimon) — never surnames.</div>
+        <p class="small">This is a context harness in five lines — the same idea as the "business file" the review recommends in its section 13. Write the rules once, paste them everywhere, and every helper produces compatible work.</p>
+      </details>
+
+      <details class="appendix">
+        <summary>4.4 · Research agent A1 — the site auditor (dispatched 12:58, full prompt)</summary>
+        <div class="prompt-block">You are A1, the site-audit probe for a same-day consulting review of
+https://prijimackynostress.cz/ — a Czech website where two 19-year-old students
+(Ondra, Šimon) sell mock entrance-exam sessions (přijímačky nanečisto) and
+tutoring (doučování) for 9th-graders in Dobříš, CZ. Your findings feed a
+published report, so evidence discipline is absolute.
+
+HARD DEADLINE: return within 35 minutes. If incomplete, return partials
+explicitly tagged NOT VERIFIED rather than miss the window. Your final message
+is structured data for a synthesizer, not prose for a human.
+
+[VOICE CARD — see 4.3]
+
+## Task 1 — FIRST ACTION: /testzdarma verification (evidence-level rule)
+Earlier recon got a 404 on …/testzdarma/ — possibly a broken primary lead-gen
+funnel, possibly a fetch artifact. Verdict "CONFIRMED BROKEN" requires ALL of:
+(a) the actual nav link href from the homepage HTML traced to its real target,
+(b) direct URL fetch of that target, (c) www and non-www variants, (d) with and
+without trailing slash, (e) checked at desktop AND mobile viewport, each with
+HTTP status codes recorded + timestamps. Anything less → verdict "FRAGILE
+FUNNEL" (works but no monitoring / unclear path — describe exactly what you
+saw). Record the precise evidence chain — this is the report's potential
+headline finding.
+
+## Task 2 — Screenshots (≤8 files total)
+[tooling chain: real browser first, escalate after ONE failed attempt, never
+retry-loop] Hygiene (binding): fresh browser context (no cookies); dismiss
+cookie banners before shooting; note any student names visible in testimonials
+(likely minors — flag them so the synthesizer can exclude before publication).
+
+## Task 3 — Audit (grouped findings, ≤150 lines total output)
+Groups: SEO/discoverability · Technical · Copy/content · Trust signals ·
+UX/navigation. For each finding: one-line what, one-line why-it-matters for
+THIS business (parents of 14-15-year-olds choosing exam prep), evidence tag +
+receipt, severity (P1 blocks customers / P2 friction / P3 polish). Check
+specifically: page titles + meta descriptions per page, H1 structure,
+schema.org presence, mobile rendering, page weight, CTA paths from homepage to
+purchase, pricing discoverability, testimonial anonymity, Gmail vs domain
+email, OG tags, 404 behavior, HTTPS, console errors.
+
+## Output schema (exactly this structure)
+### TESTZDARMA VERDICT … ### SCREENSHOT MANIFEST … ### FINDINGS …
+### TOP 5 … ### NOT VERIFIED …</div>
+        <p class="small">The two ideas worth stealing: the <strong>evidence-level rule</strong> (define what "confirmed" requires <em>before</em> the agent looks) and "partials tagged NOT VERIFIED beat missing the window."</p>
+      </details>
+
+      <details class="appendix">
+        <summary>4.5 · Research agent A2 — market &amp; prices (full prompt, trimmed)</summary>
+        <div class="prompt-block">You are A2, the competitive+pricing probe … HARD DEADLINE: 35 minutes …
+
+PRICE SOURCE RULE (binding): a price may ONLY be cited from the competitor's
+OWN website/checkout fetched today — never from aggregators, articles, or
+memory. If not findable on their own site: write "price not public".
+Normalize: state price per session vs per course (with duration). Mark
+promotional prices as such.
+
+## Task 1 — National competitor table (cap 8 rows) …
+## Task 2 — Local landscape (HARD TIME-BOX: 10 minutes, then stop)
+…"LOCAL LANDSCAPE: thin/unmapped" is an acceptable honest answer — do not pad.
+## Task 3 — Exam-market context: official exam dates from cermat.cz ONLY …
+## Task 4 — Positioning gap (3-5 bullets) grounded in the table …</div>
+        <p class="small">"Unmapped is an acceptable answer — do not pad" is the anti-hallucination sentence. Give every research agent permission to come back empty-handed, or it will invent.</p>
+      </details>
+
+      <details class="appendix">
+        <summary>4.6 · Research agent A3 — the ground-up blueprint (full prompt, trimmed)</summary>
+        <div class="prompt-block">You are A3, the ground-up blueprint designer … Your deliverable: the report's
+centerpiece — "if we designed this site from scratch, what is the simplest,
+most logical architecture" — optimized for SEO/marketing and customer
+acquisition, while staying simple enough for TWO STUDENTS to maintain.
+SIMPLICITY IS THE GRADED DELIVERABLE.
+
+BINDING FRAME — open with this and mean it: "No rebuild needed now." The
+blueprint is the target picture for when they outgrow the current site; the
+first moves are quick wins INSIDE WordPress/Elementor. A rebuild-first
+implication is a failure mode of this deliverable.
+
+Required sections: 1. NO REBUILD NEEDED NOW (≤6 lines) · 2. SITEMAP (≤8 pages,
+each: job-to-be-done | target Czech keyword | one CTA) · 3. MODULES &amp; SEAMS
+(≤8 reusable blocks) · 4. ACQUISITION FUNNEL (+ the seasonal clock) ·
+5. PLATFORM STANCE (honest stay-vs-rebuild, "stay" is acceptable) ·
+6. THREE CZECH HERO HOOKS · 7. WHAT I'D MEASURE (≤5 lines)</div>
+        <p class="small">Note the guardrails: hard caps on everything, an explicit failure mode named in advance, and "simplicity is the graded deliverable." Agents optimize what you grade.</p>
+      </details>
+
+      <details class="appendix">
+        <summary>4.7 · The adversarial review charters (Codex ×3, Gemini ×1)</summary>
+        <p><strong>Codex, plan review (12:35):</strong></p>
+        <div class="prompt-block">You are an adversarial technical reviewer. Review the plan below for
+implementation feasibility, untested assumptions, security risks, and
+dependency concerns. Find at least 3 serious problems. Also propose better
+approaches where you see them. … Judge feasibility of the pipeline mechanics
+(publishing, screenshot tooling, timing math, privacy/leak vectors, review
+gates, fallbacks), the realism of the schedule, and the soundness of the
+report content plan.</div>
+        <p><strong>Codex, finished-report review (15:30, round 2):</strong></p>
+        <div class="prompt-block">You are an adversarial reviewer of a CLIENT-FACING consulting report … Find
+problems BEFORE the client does. Review charter, in priority order:
+1. FACTUAL OVERCLAIMS: any claim stated more strongly than its evidence tag
+   supports; any number without a source; any internal contradiction.
+2. TONE FAILURES: anything condescending, harsh, mocking, or sycophantic.
+3. SIMPLE-ENGLISH violations a Czech B1-B2 reader would stumble on.
+4. CZECH LANGUAGE: wrong diacritics or grammar in the bracketed terms.
+5. PRIVACY: any full surname of a private person.
+6. STRUCTURE: broken internal references.
+Severity: P1 = must fix before the client sees it …</div>
+        <p><strong>Gemini, "Chief UXR" review (20:02):</strong></p>
+        <div class="prompt-block">You are 'Chief UXR' — a UX-research reviewer … readers: two 19-year-old Czech
+founders with B1-B2 English + their parents/partners skimming. Your charter —
+UX research, not visual nitpicking: 1. AUDIENCE FIT: where would a B1 reader
+lose the thread or feel lectured? 2. READING FLOW at 15 sections: where does
+attention die? 3. COMPREHENSION TRAPS: jargon without gloss, tables that fail
+on a phone. Max 5 findings, each citing a concrete element. If you cannot name
+the element, drop the finding.</div>
+        <p class="small">Three different reviewer personalities on purpose: feasibility attacker, claims attacker, reader advocate. Same-model review agrees with itself; different models and different charters catch different failures.</p>
+      </details>
+
+      <details class="appendix">
+        <summary>4.8 · The steering corrections, verbatim (the most instructive part)</summary>
+        <div class="said"><p class="who">13:19 — killing a format</p><p>"let's not do any 'personal letter' style anymore, that was stupid; no weird custom language tweaks or overly bending our thinking just to fit some format expectations" <span class="redacted">[reference to earlier engagement removed]</span></p></div>
+        <div class="said"><p class="who">19:06 — the reframe (abridged)</p><p>"'97/100' — it has to say what units, what measure, people ask 'of what' […] You can't just say 'hero' and expect that Ondřej and others understand what hero is […] '12 How this report was made' — we need more meat in this — reveal more of our 'kitchen' — what were the prerequisites? can it be done with cheaper models? […] main advice for Ondra is supposed to be — not the schedule of what to do and when, but how to use AI to speedrun the iterations […] How do we help Ondřej become AI-native? […] I don't want him to get a fish. I want to teach him how to get the fish." <span class="redacted">[tool-preference opinions removed — the published principle is model-agnostic]</span></p></div>
+        <div class="said"><p class="who">19:48 — rejecting the v2 plan, with reasons</p><p>"the first part is ok […] just that the practical plan and how-to so far entirely ignores any existence of AI […] tell him how to use AI to self-learn while doing; that's the best curriculum I've seen in practice so far, work on your own business with your own money on the line […] not a prescriptive 'single smart curriculum', that's pretentious […] let's call it 'assisted self-paced progressive learning', showing the ropes"</p></div>
+        <p class="small">This is what "steering" means: not better prompts, but reading the output and reacting with judgment. The corrections carried more information than the briefing.</p>
+      </details>
+      <p class="toc-return"><a href="#page-top">↑ Back to contents</a></p>
+    </section>
+
+    <section id="replicate" aria-labelledby="replicate-h">
+      <h2 id="replicate-h"><span class="secnum">5</span>Replicating this</h2>
+      <p>You do not need the multi-agent setup to copy the <em>method</em>. The session above is four moves, and every one works in a plain ~$20 AI chat:</p>
+      <ol>
+        <li><strong>Brief casually, but completely</strong> — who it's for, the tone contract, the deliverable, the deadline (4.1). Then <strong>let the AI ask you questions before it starts</strong> (4.2).</li>
+        <li><strong>Write the rules once</strong> — a voice card / business file pasted into every conversation (4.3).</li>
+        <li><strong>Demand evidence discipline</strong> — receipts with dates, "not verified" allowed, severity tags (4.4–4.6). Define what "confirmed" means before the AI looks.</li>
+        <li><strong>Get a second opinion from a different AI</strong> — paste the finished work into another tool with an attack charter (4.7). Then read it yourself and steer (4.8) — the human corrections were the highest-value tokens of the whole day.</li>
+      </ol>
+      <p>That is the same loop the review's <a href="index.html#diy">section 13</a> teaches — this page is just the loop, caught on camera.</p>
+    </section>
+
+  </main>
+
+  <footer class="report-footer">
+    <p>Companion to <a href="index.html">the Přijímačky No-Stress review</a>. Same rules: public-but-unlisted, taken down around mid-July 2026, first names only, internal references redacted and marked.</p>
+  </footer>
+
+</div>
+</body>
+</html>
