@@ -114,8 +114,8 @@
         <p>"We just took this exam ourselves — and scored 97/100" is something no adult-run course can say. Parents buy trust; students buy someone who speaks their language. You have both in one story.</p>
       </div>
       <div class="finding">
-        <div class="finding-head"><h3>Named testimonials</h3><span class="chip chip-observed">Observed</span></div>
-        <p>Your testimonials already include full names and schools. Most small tutoring sites use anonymous quotes — yours are more credible than the average. (Section 5 has one suggestion to make them stronger still.)</p>
+        <div class="finding-head"><h3>Real testimonials, not marketing quotes</h3><span class="chip chip-observed">Observed</span></div>
+        <p>Your testimonials are real and specific — named students, real schools. That instinct is right: anonymous quotes convince nobody. One important step makes them safe to keep: written parental consent, because the names belong to minors (details in section 5). With consent on file — and a photo — they become your strongest asset.</p>
       </div>
       <div class="finding">
         <div class="finding-head"><h3>A visible, fair price for the core product</h3><span class="chip chip-observed">Observed</span></div>
@@ -142,7 +142,7 @@
 
       <div class="finding">
         <div class="finding-head"><h3>The site is frozen in last season</h3><span class="tag tag-fix">Fix first</span><span class="chip chip-observed">Observed</span></div>
-        <p>This is the big one, and it's sneaky because every page technically works. Today (June 11): the free test page thanks participants from <em>November</em> and its main button invites signup for <em>March 21 — three months ago</em>. The homepage opens with an "important notice" about an <em>April</em> session change — auto-stamped "Aktuální k 11. 06. 2026", so stale news wears today's date. The booking page lists mostly past dates. A parent of a <em>next-year</em> 9th-grader — researching right now, in June, for autumn — concludes you've wound down.</p>
+        <p>This is the big one, and it's sneaky because every page technically works. Today (June 11): the free test page thanks participants from <em>November</em> and its main button invites signup for <em>March 21 — three months ago</em>. The homepage opens with an "important notice" about an <em>April</em> session change — auto-stamped "Aktuální k 11. 06. 2026", so old news shows today's date. The booking page lists mostly past dates. A parent of a <em>next-year</em> 9th-grader — researching right now, in June, for autumn — concludes you've wound down.</p>
         <p><strong>The fix:</strong> a season-rollover ritual (one checklist, twice a year), auto-hiding past dates, and an <em>evergreen</em> free test — delivered by email instead of tied to an event — so the funnel works year-round. Section 9 builds on exactly this. <span class="receipt">Screenshots in section 6; /testzdarma/ and homepage, June 11, 2026.</span></p>
       </div>
 
@@ -159,15 +159,15 @@
       </div>
 
       <div class="finding">
-        <div class="finding-head"><h3>You are flying blind</h3><span class="tag tag-fix">Fix first</span><span class="chip chip-observed">Observed</span></div>
-        <p>There is no analytics on the site — no Google Analytics, no Search Console connection we could detect, nothing. You cannot answer the most basic business question: <em>where do bookings come from?</em> Instagram? The school corridor? Google? Every marketing hour you spend is unmeasured.</p>
+        <div class="finding-head"><h3>You cannot see what works</h3><span class="tag tag-fix">Fix first</span><span class="chip chip-observed">Observed</span></div>
+        <p>From the outside, we could not detect any analytics — no Google Analytics, no tag manager, nothing visible. (If you run something invisible to us, ignore this one.) Without it, you cannot answer the most basic business question: <em>where do bookings come from?</em> Instagram? The school corridor? Google? Every marketing hour you spend is unmeasured.</p>
         <p><strong>The fix:</strong> install GA4 (or a simpler privacy-friendly tool) + connect Search Console. One evening; then ignore it except once a month. <span class="receipt">Checked: no gtag/GTM/analytics scripts in page source, June 11, 2026.</span></p>
       </div>
 
       <div class="finding">
         <div class="finding-head"><h3>Google can't show your best content</h3><span class="tag tag-fix">Fix first</span><span class="chip chip-observed">Observed</span></div>
         <p>No structured data (schema.org) anywhere — yet you have everything it rewards: a local business with an address, dated exam sessions, a 490 Kč product, and FAQ sections. With markup, Google can show your dates, price, and FAQ directly in search results; without it, you're a plain blue link next to Scio.</p>
-        <p><strong>The fix:</strong> the same SEO plugin from finding 1 does LocalBusiness + FAQ markup with configuration, not code. <span class="receipt">Checked: zero <code>ld+json</code> blocks site-wide, June 11, 2026.</span></p>
+        <p><strong>The fix:</strong> the same SEO plugin from the link-preview fix above does LocalBusiness + FAQ markup with configuration, not code. <span class="receipt">Checked: zero <code>ld+json</code> blocks site-wide, June 11, 2026.</span></p>
       </div>
 
       <div class="finding">
@@ -190,12 +190,12 @@
 
       <div class="finding">
         <div class="finding-head"><h3>The legal layer needs one honest afternoon</h3><span class="tag tag-friction">Real friction</span><span class="chip chip-observed">Observed</span></div>
-        <p>Three related gaps: <strong>(a)</strong> no business ID (IČO) anywhere on the site — Czech consumer rules require it for anyone selling online; <strong>(b)</strong> no cookie consent mechanism, even though the shop processes personal data; <strong>(c)</strong> testimonials show <em>full names of students</em> who are very likely minors — under GDPR that needs explicit parental consent you can show. None of this is dramatic, and all of it is normal early-stage mess — but a careful parent (or a competitor having a bad day) could make it expensive.</p>
+        <p>Three related gaps: <strong>(a)</strong> no business ID (IČO) anywhere on the site — Czech rules normally require it for businesses selling online, so confirm your registration setup and show the number; <strong>(b)</strong> no cookie consent mechanism, even though the shop processes personal data; <strong>(c)</strong> testimonials show <em>full names of students</em> who are very likely minors — under GDPR that needs explicit parental consent you can show. None of this is dramatic — it is the normal early-stage list every young business cleans up once — but a careful parent (or a competitor having a bad day) could make it expensive.</p>
         <p><strong>The fix:</strong> add IČO to the footer + contact page (if registration isn't sorted yet, this is the nudge — it's quick and cheap); install a consent plugin; switch testimonials to "Václav S." format or collect written parental consent for names and photos. <span class="receipt">/kontakty/ has no IČO; no consent plugin detected; full names on homepage — June 11, 2026.</span></p>
       </div>
 
       <div class="finding">
-        <div class="finding-head"><h3>Gmail at the front door</h3><span class="tag tag-friction">Real friction</span><span class="chip chip-observed">Observed</span></div>
+        <div class="finding-head"><h3>The contact email: Gmail instead of your own domain</h3><span class="tag tag-friction">Real friction</span><span class="chip chip-observed">Observed</span></div>
         <p><code>prijimackynostress@gmail.com</code> is the only contact address. You own the domain — an address like <code>ahoj@prijimackynostress.cz</code> costs little, forwards to the same Gmail inbox, and removes a quiet "is this a real company?" doubt for paying parents.</p>
         <p><span class="receipt">Contact address on /kontakty/ and homepage, June 11, 2026.</span></p>
       </div>
@@ -255,7 +255,7 @@
         <li><strong>The three-second test fails on the slogan.</strong> "This year without stress!" sets a mood but a rushed parent can't tell in three seconds: exam prep, 9th grade, Dobříš, from 490 Kč. The information exists — lower on the page. <em>Change: subheadline that says who/what/where in plain words (section 9.6 has three drafts).</em></li>
         <li><strong>The highest-intent moment splits into two doors.</strong> Booking a single session opens a proper checkout; booking a package opens a Google Form. The buyer with the most money to spend gets the most improvised path — a classic "wait, which one?" moment at exactly the wrong time.</li>
         <li><strong>Stale dates drain trust silently.</strong> Past sessions presented as "nearest dates" + an expired notice stamped with today's date = the site looks abandoned even though the business isn't. For a service parents trust with their kid's future, "is this still running?" is the most expensive doubt possible.</li>
-        <li><strong>The footer is missing its handshake.</strong> Where a careful parent looks last before paying — the footer — there's a Gmail address and no business ID (IČO). Both fixable in an afternoon; both quiet credibility leaks today.</li>
+        <li><strong>The footer is missing its trust signals.</strong> Where a careful parent looks last before paying — the footer — there's a Gmail address and no business ID (IČO). Both fixable in an afternoon; both quiet credibility leaks today.</li>
       </ol>
     </section>
 
@@ -282,7 +282,7 @@
       <h3>Type</h3>
       <ul>
         <li><strong>Headlines: Lora</strong> (600/700) — a warm serif with full Czech diacritics, free on Google Fonts. Keeps the bookish personality your current serif headlines already have.</li>
-        <li><strong>Body: Source Sans 3</strong> (400/600) — replaces Roboto (the internet's default font, and currently failing to load anyway — finding 3). Friendly, very readable at 17–18px.</li>
+        <li><strong>Body: Source Sans 3</strong> (400/600) — replaces Roboto (the internet's default font, and currently failing to load anyway — see the font finding in section 5). Friendly, very readable at 17–18px.</li>
         <li>Rules of thumb: two families total, max four weights, headlines tight (line-height ≈ 1.15), body relaxed (≈ 1.6), body text never below 16px.</li>
       </ul>
 
@@ -340,8 +340,8 @@
 
       <h3>9.1 Five quick wins inside WordPress (this month)</h3>
       <ol>
-        <li><strong>Show package prices as a simple table</strong> — 1 / 2 / 3 sessions (termíny) with real Kč numbers. A hidden price is a lost booking.</li>
-        <li><strong>Switch to a domain email</strong> (e.g. <code>ahoj@prijimackynostress.cz</code>) — Gmail reads amateur to paying parents. Keep Gmail forwarding behind it.</li>
+        <li><strong>Show package prices as a simple table</strong> — 1 / 3 / 6 / 9 sessions (termíny) with real Kč numbers. A hidden price is a lost booking.</li>
+        <li><strong>Switch to a domain email</strong> (e.g. <code>ahoj@prijimackynostress.cz</code>) — it looks more professional to paying parents, and Gmail can keep receiving everything behind it.</li>
         <li><strong>Add a photo and school logo to each testimonial</strong> — with the student's and parent's permission. Names are already there; faces push credibility much further.</li>
         <li><strong>Install a free SEO plugin</strong> (Rank Math or Yoast) and fill in page titles, descriptions, and LocalBusiness + Course + FAQ structured data (schema.org). Zero design work.</li>
         <li><strong>Make the free test bullet-proof</strong> — one clear button on the homepage, a stable URL, and a check that the form really delivers the test and saves the email. It is the top of your whole funnel.</li>
@@ -364,7 +364,7 @@
           </tbody>
         </table>
       </div>
-      <p class="small">A ninth page — entrance exams for 8-year gymnasiums (víceletá gymnázia, 5th grade) — joins the map when that product is ready. Don't build the page before the product.</p>
+      <p class="small">A ninth page — entrance exams for víceletá gymnázia (the multi-year grammar-school track, 5th grade) — joins the map when that product is ready. Don't build the page before the product.</p>
 
       <h3>9.3 Modules and seams: build from a few deep blocks</h3>
       <p>From software design (John Ousterhout): build from <em>a few blocks that each do one big job behind a simple face</em>. You drop a block into a page and fill in a short form — you never rebuild the logic. This applies to your content too: one testimonial format reused everywhere beats ten hand-made quotes.</p>
@@ -506,12 +506,12 @@
           <table>
             <thead><tr><th>Do</th><th class="num">Effort</th><th>Why</th></tr></thead>
             <tbody>
-              <tr><td><strong>Season reset:</strong> make the free test evergreen (delivered by email, not tied to an event), auto-hide past dates, retire the April notice</td><td class="num">1 evening</td><td>Finding 1 — next-year parents are searching <em>now</em>, and the site tells them you're gone</td></tr>
-              <tr><td><strong>SEO plugin</strong> (Rank Math/Yoast): meta descriptions, share images (OG), short titles, LocalBusiness + FAQ markup</td><td class="num">2 hours</td><td>Findings 2 &amp; 5 — makes every WhatsApp share and Google result work for you</td></tr>
-              <tr><td><strong>Fix the font loading</strong> (regenerate Elementor fonts over HTTPS) + the „PŘÍJÍMAČKY" H1 typo</td><td class="num">30 min</td><td>Findings 3 &amp; 6 — visible quality, trivial cost</td></tr>
-              <tr><td><strong>Install GA4 + Search Console</strong></td><td class="num">1 evening</td><td>Finding 4 — you can't improve what you can't see</td></tr>
-              <tr><td><strong>Legal afternoon:</strong> IČO in the footer, cookie consent plugin, testimonial consent or „Václav S." format</td><td class="num">1 afternoon</td><td>Finding 8 — cheap now, expensive later</td></tr>
-              <tr><td><strong>Domain email</strong> (ahoj@…) forwarding to Gmail</td><td class="num">1 hour</td><td>Finding 9 — quiet trust signal at the front door</td></tr>
+              <tr><td><strong>Season reset:</strong> make the free test evergreen (delivered by email, not tied to an event), auto-hide past dates, retire the April notice</td><td class="num">1 evening</td><td>The frozen-season finding — next-year parents are searching <em>now</em>, and the site tells them you're gone</td></tr>
+              <tr><td><strong>SEO plugin</strong> (Rank Math/Yoast): meta descriptions, share images (OG), short titles, LocalBusiness + FAQ markup</td><td class="num">2 hours</td><td>The link-preview and rich-results findings — makes every WhatsApp share and Google result work for you</td></tr>
+              <tr><td><strong>Fix the font loading</strong> (regenerate Elementor fonts over HTTPS) + the „PŘÍJÍMAČKY" H1 typo</td><td class="num">30 min</td><td>The font and typo findings — visible quality, trivial cost</td></tr>
+              <tr><td><strong>Install GA4 + Search Console</strong></td><td class="num">1 evening</td><td>The analytics finding — you can't improve what you can't see</td></tr>
+              <tr><td><strong>Legal afternoon:</strong> IČO in the footer, cookie consent plugin, testimonial consent or „Václav S." format</td><td class="num">1 afternoon</td><td>The legal finding — cheap now, expensive later</td></tr>
+              <tr><td><strong>Domain email</strong> (ahoj@…) forwarding to Gmail</td><td class="num">1 hour</td><td>The email finding — quiet trust signal at the front door</td></tr>
             </tbody>
           </table>
         </div>
@@ -524,11 +524,11 @@
             <thead><tr><th>Do</th><th class="num">Effort</th><th>Why</th></tr></thead>
             <tbody>
               <tr><td><strong>New hero + one action color</strong> per sections 7–8 (the mockup is a working start)</td><td class="num">1–2 days</td><td>Audit — the first screen finally sells</td></tr>
-              <tr><td><strong>Visible price table</strong> (1/3/6/9 sessions) + packages as real checkout products + „doučování od X Kč"</td><td class="num">½ day</td><td>Findings 7 &amp; 8 — removes friction exactly where money changes hands</td></tr>
+              <tr><td><strong>Visible price table</strong> (1/3/6/9 sessions) + packages as real checkout products + „doučování od X Kč"</td><td class="num">½ day</td><td>The pricing and checkout findings — removes friction exactly where money changes hands</td></tr>
               <tr><td><strong>Google Business Profile + Mapy.cz listing</strong></td><td class="num">1 evening</td><td>Section 10 — "doučování Dobříš" on the map likely beats classic SEO locally</td></tr>
               <tr><td><strong>Email nurture:</strong> welcome email + monthly tips for the free-test list</td><td class="num">½ day</td><td>Section 9.4 — turns the lead magnet into bookings by October</td></tr>
               <tr><td><strong>Two blog posts before October</strong> („Jak se připravit na přijímačky 2027", „Termíny, přihlášky a DiPSy 2027")</td><td class="num">2 evenings</td><td>Section 9.2 — the only channel that compounds; September searches start it</td></tr>
-              <tr><td><strong>Collect consented photo testimonials</strong> at autumn sessions (a one-page consent form)</td><td class="num">ongoing</td><td>Finding 8 + section 3 — your strongest proof, made legal and stronger</td></tr>
+              <tr><td><strong>Collect consented photo testimonials</strong> at autumn sessions (a one-page consent form)</td><td class="num">ongoing</td><td>The legal finding + section 3 — your strongest proof, made legal and stronger</td></tr>
             </tbody>
           </table>
         </div>
@@ -542,8 +542,8 @@
             <tbody>
               <tr><td><strong>Výsledky &amp; recenze page</strong> with real score improvements</td><td class="num">1 day</td><td>Section 9.2 — the trust anchor every page links to</td></tr>
               <tr><td><strong>5th-grade track</strong> (víceletá gymnázia) when the product is ready</td><td class="num">product first</td><td>A second audience with the same machine — don't build the page before the product</td></tr>
-              <tr><td><strong>Season-rollover checklist + free uptime monitor</strong></td><td class="num">1 evening</td><td>Finding 1, permanently solved as a ritual, not a memory</td></tr>
-              <tr><td><strong>Performance diet</strong> (image compression, plugin cleanup)</td><td class="num">1 day</td><td>Finding 10 — after the funnel works</td></tr>
+              <tr><td><strong>Season-rollover checklist + free uptime monitor</strong></td><td class="num">1 evening</td><td>The frozen-season finding, permanently solved as a ritual, not a memory</td></tr>
+              <tr><td><strong>Performance diet</strong> (image compression, plugin cleanup)</td><td class="num">1 day</td><td>The speed finding — after the funnel works</td></tr>
               <tr><td><strong>Local partnerships</strong> (teachers, schools, DDM in the Příbram–Beroun corridor)</td><td class="num">ongoing</td><td>Section 10 — the distribution channel the national brands can't copy</td></tr>
             </tbody>
           </table>
@@ -573,7 +573,7 @@
             <tr>
               <td><strong>Codex CLI</strong> <span class="small">(OpenAI)</span></td>
               <td>Adversarial reviewer</td>
-              <td>A genuinely different AI reviewed the work plan before execution: 13 findings, including "add a backup publishing path" and "blur student names in screenshots — they may be minors." <!-- SLOT:CODEX-R2 --> A second model catching the first model's blind spots is the single most useful pattern in this whole setup.</td>
+              <td>A genuinely different AI reviewed the work twice. Round 1, the plan: 13 findings, including "add a backup publishing path" and "protect student names in screenshots — they may be minors." Round 2, this finished report: 12 findings — a self-contradiction between two sections, broken cross-references, two claims stated stronger than the evidence, and English idioms too hard for B1 readers. All fixed before you read this. A second model catching the first model's blind spots is the single most useful pattern in this whole setup.</td>
             </tr>
             <tr>
               <td><strong>Grok</strong> <span class="small">(xAI)</span></td>
