@@ -613,7 +613,8 @@
       </ul>
 
       <h3>What making this actually required</h3>
-      <p>Honestly: a paid AI-coding setup (Claude Code), a second AI (Codex) for cross-review, an automated browser for evidence — and the real ingredient, a practiced workflow built over many months. Mark's full setup is public if you're curious: <a href="https://mark-c4r.github.io/notes/factory-overview/">the factory overview</a>. Read it as the endgame museum, not the entry fee. <strong>You need none of it to start.</strong></p>
+      <p>Honestly: a paid AI-coding setup (Claude Code), a second AI (Codex) for cross-review, an automated browser for evidence — and the real ingredient, a practiced workflow built over many months. What that workflow actually is, in plain words: a folder of standing rules the AI reads at the start of every session (what counts as evidence, what must be verified before publishing, whose names may never appear in public), ready-made procedures for repeating jobs (publish, review, screenshot, close out), standing attack briefs for the reviewer AIs, and a growing log of past mistakes that have been turned into rules. Nothing in it is clever; all of it is accumulated — every rule exists because something once went wrong without it.</p>
+      <p>Why that matters: give the same casual briefing to a fresh, empty Claude or Codex — no rules, no history — and you get the same <em>intelligence</em> but none of the <em>discipline</em>. The report would still look good, and that is exactly the trap. Claims would arrive confident but unlabeled and unchecked; student names could slip into screenshots; no second AI would attack the draft unless someone remembered to ask; nobody would check that the published page actually works. The failures would be quiet ones — the same beginner traps section 13 lists. The setup does not make the AI smarter; it makes the work <em>checkable</em>. Mark's full setup is public if you're curious: <a href="https://mark-c4r.github.io/notes/factory-overview/">the factory overview</a>. Read it as the endgame museum, not the entry fee. <strong>You need none of it to start</strong> — the ten-minute business file in section 13.1 is the same idea at day-one scale, and it compounds the same way.</p>
 
       <h3>Could a ~$20 chat plan do this? Mostly yes — by hand</h3>
       <p>The honest split is <em>by hand vs. automated</em>, not <em>possible vs. impossible</em>. A paid chat plan (Gemini, ChatGPT, Claude) can do the thinking parts of this report: reason about a website's weaknesses, draft every text, critique work you paste into it, and help research a market when you paste in the sources or it has web access — the fact-checking stays yours. It can even give you a second opinion: paste the same work into a <em>different</em> AI. What our setup added was automation: many research agents working at once, browser screenshots taken automatically, review gates that run every time, one-command publishing. That changed the speed and the strength of the evidence — <strong>not the intelligence</strong>. Which is exactly why section 13 exists.</p>
@@ -622,15 +623,23 @@
       <h3>The session, replayed — and the full log</h3>
       <p>The honest shape of the working day, measured from the session records (not memory):</p>
       <ul>
-        <li><strong>12:19</strong> — Mark briefed the AI in one casual message, and answered four scoping questions back.</li>
+        <li><strong>12:19</strong> — Mark briefed the AI in one casual, voice-note-style message — the most important prompt of the day — and then answered four scoping questions back. What that one message carried:
+          <ul>
+            <li><strong>Context:</strong> who the client is — a friend, a young founder selling exam prep for 9th-graders in a small Czech town — and what exists: the website, the business, the competition.</li>
+            <li><strong>The job:</strong> an honest review with improvement proposals — especially UX/UI and one consistent style guide — "elevate the experience without being flashy."</li>
+            <li><strong>The tone contract:</strong> a trusted mentor — encouraging, honestly representing him and his business, and "no participation trophies."</li>
+            <li><strong>The output contract:</strong> a report as an HTML page, deployed on GitHub Pages, shareable link in hand before the afternoon meeting.</li>
+            <li><strong>Process permissions:</strong> study consulting approaches first, start with clarifying questions, and document every step and tool used — which became this section and the session log.</li>
+          </ul>
+          Why this shape works: a brief does not need to be polished — it needs to be <em>complete</em>. The words are casual, but everything the AI cannot guess is in there: context, job, tone, output, deadline, and permission to structure the work. And asking the AI to <em>ask questions first</em> is the cheapest insurance there is: four answers locked the contract and prevented hours of building the wrong thing. The full prompt, word for word, is in the <a href="session-log.html">session log</a> (4.1).</li>
         <li><strong>12:58</strong> — work started; a placeholder page was <em>live on the web at minute seven</em>, so publishing could never fail at the deadline.</li>
         <li><strong>13:01–13:14</strong> — three research agents ran in parallel (site audit, market &amp; prices, blueprint).</li>
         <li><strong>13:19–15:43</strong> — Mark left to travel, offline; the session wrote, reviewed (Codex round 2), fixed, and <strong>shipped version 1 at 15:36 — while he was on the road</strong>.</li>
-        <li><strong>15:54–19:06</strong> — human time: reading, meeting, thinking. The AI waited. Roughly half of the 9-hour day was human attention, not AI work — an honest number nobody usually shows.</li>
+        <li><strong>15:54–19:06</strong> — mostly not work at all: travel, dinner, life — with a bit of proofreading of the live page on public transport. The AI waited. Roughly half of the 9-hour day was human time, not AI work — an honest number nobody usually shows.</li>
         <li><strong>19:06–20:20</strong> — one steering message from Mark created this version: research, rewrite, three review lanes, live.</li>
         <li><strong>20:29–20:40</strong> — a third steering message added the session log linked below: the work itself became part of the deliverable.</li>
         <li><strong>20:50–21:19</strong> — crowd research (Grok, run by hand) came back in two rounds; four verified findings entered sections 10 and 13, one failed verification and stayed out; research closed when it stopped producing news.</li>
-        <li><strong>Late evening</strong> — a final consistency pass with all research folded in, the numbers refreshed one last time, and both pages frozen.</li>
+        <li><strong>Late evening</strong> — a final consistency pass with all research folded in, the numbers refreshed one last time, both pages frozen — and Mark's read-through corrections folded right after.</li>
       </ul>
       <p>In total: 11 operator messages, 11 helper agents, 5 cross-model reviews, 2 crowd-research rounds, 230+ logged tool actions, one working day.</p>
       <div class="callout">
